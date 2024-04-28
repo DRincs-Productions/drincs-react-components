@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export default interface CheckBoxFormControlBaseProps {
+export default interface CheckboxFormControlBaseProps {
     label?: string | React.ReactNode;
     addHelperMarginIfIsHidden?: boolean;
     helperText?: string | JSX.Element;

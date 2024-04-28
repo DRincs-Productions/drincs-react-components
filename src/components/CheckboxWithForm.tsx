@@ -1,10 +1,10 @@
 import { Typography } from "@mui/joy";
-import { CheckBoxWithFormProps } from "../interfaces/components";
-import CheckBox from "./CheckBox";
-import CheckBoxFormControlBase from "./CheckBoxFormControlBase";
+import { CheckboxWithFormProps } from "../interfaces/components";
+import Checkbox from "./Checkbox";
+import CheckboxFormControlBase from "./CheckboxFormControlBase";
 import ErrorComponent from "./ErrorComponent";
 
-export default function CheckBoxWithForm(props: CheckBoxWithFormProps) {
+export default function CheckboxWithForm(props: CheckboxWithFormProps) {
     const {
         helperText,
         addHelperMarginIfIsHidden,
@@ -19,14 +19,14 @@ export default function CheckBoxWithForm(props: CheckBoxWithFormProps) {
 
     try {
         return (
-            <CheckBoxFormControlBase
+            <CheckboxFormControlBase
                 helperText={helperText}
                 error={error}
                 addHelperMarginIfIsHidden={addHelperMarginIfIsHidden}
                 loading={loading}
                 label={label}
             >
-                <CheckBox
+                <Checkbox
                     {...rest}
                     size={size}
                     defaultChecked={defaultChecked}
@@ -37,7 +37,7 @@ export default function CheckBoxWithForm(props: CheckBoxWithFormProps) {
                     }
                     disabled={loading || disabled}
                 />
-            </CheckBoxFormControlBase>
+            </CheckboxFormControlBase>
         );
     } catch (error) {
         return <ErrorComponent error={error} text={"Check Box With Form"} />

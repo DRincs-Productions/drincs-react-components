@@ -1,8 +1,8 @@
 import { FormControl, FormHelperText, FormLabel, Skeleton, useTheme } from '@mui/joy';
-import CheckBoxFormControlBaseProps from '../interfaces/components/CheckBoxFormControlBaseProps';
+import CheckboxFormControlBaseProps from '../interfaces/components/CheckboxFormControlBaseProps';
 import CLErrorComponent from './ErrorComponent';
 
-export default function CheckBoxFormControlBase(props: CheckBoxFormControlBaseProps) {
+export default function CheckboxFormControlBase(props: CheckboxFormControlBaseProps) {
     const {
         helperText,
         children,
@@ -47,6 +47,6 @@ export default function CheckBoxFormControlBase(props: CheckBoxFormControlBasePr
             </FormControl >
         )
     } catch (error) {
-        return <CLErrorComponent error={error} text={"CheckBox Form Control Base"} />
+        return <CLErrorComponent error={error} text={"Checkbox Form Control Base"} />
     }
 }

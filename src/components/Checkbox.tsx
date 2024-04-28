@@ -1,16 +1,16 @@
 import { Checkbox as CheckboxJoy } from "@mui/joy";
 import { FocusEventHandler } from "react";
-import { CheckBoxProps } from "../interfaces/components";
+import { CheckboxProps } from "../interfaces/components";
 import ErrorComponent from "./ErrorComponent";
 
-export default function CheckBox(props: CheckBoxProps) {
+export default function Checkbox(props: CheckboxProps) {
     const {
         onChangeGeneric,
         disabled,
         ...rest
     } = props;
 
-    const checkBoxOnChange: FocusEventHandler<HTMLInputElement> = (event) => {
+    const checkboxOnChange: FocusEventHandler<HTMLInputElement> = (event) => {
         onChangeGeneric( event.target.checked)
     }
 
@@ -18,11 +18,11 @@ export default function CheckBox(props: CheckBoxProps) {
         return (
             <CheckboxJoy
                 {...rest}
-                onChange={checkBoxOnChange}
+                onChange={checkboxOnChange}
                 disabled={disabled}
             />
         );
     } catch (error) {
-        return <ErrorComponent error={error} text={"Check Box"} />
+        return <ErrorComponent error={error} text={"Checkbox"} />
     }
 }

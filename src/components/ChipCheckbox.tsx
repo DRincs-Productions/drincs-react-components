@@ -1,8 +1,8 @@
-import { CheckBoxProps } from "../interfaces/components";
-import CheckBox from "./CheckBox";
+import { CheckboxProps } from "../interfaces/components";
+import Checkbox from "./Checkbox";
 import ErrorComponent from "./ErrorComponent";
 
-export default function ChipCheckBox(props: CheckBoxProps) {
+export default function ChipCheckbox(props: CheckboxProps) {
     const {
         variant = "solid",
         disableIcon = true,
@@ -12,7 +12,7 @@ export default function ChipCheckBox(props: CheckBoxProps) {
 
     try {
         return (
-            <CheckBox
+            <Checkbox
                 variant={variant}
                 disableIcon={disableIcon}
                 overlay={overlay}
