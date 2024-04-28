@@ -7,5 +7,5 @@ export default interface TextFormControlBaseProps {
     required?: boolean;
     error?: boolean;
     loading?: boolean;
-    children?: ReactNode
+    children: ReactNode
 }
