@@ -1,0 +1,2 @@
+export { OnChangeGenericType } from './OnChangeGenericType';
+
