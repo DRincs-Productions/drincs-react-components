@@ -1,0 +1,40 @@
+{
+  "name": "@drincs/react-components",
+  "version": "0.0.1",
+  "description": "Componenst for react",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DRincs-Productions/drincs-react-components.git"
+  },
+  "author": "DRincs-Productions",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/DRincs-Productions/drincs-react-components/issues"
+  },
+  "homepage": "https://github.com/DRincs-Productions/drincs-react-components#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2",
+    "vitest": "^1.4.0"
+  },
+  "keywords": [
+    "game",
+    "js",
+    "novel",
+    "pixi",
+    "pixi-vn",
+    "visual",
+    "visual-novel"
+  ]
+}
