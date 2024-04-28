@@ -1,3 +1,5 @@
+export { default as Autocomplete } from './Autocomplete';
+export { default as AutocompleteControlled } from './AutocompleteControlled';
 export { default as Button } from './Button';
 export { default as ButtonFab } from './ButtonFab';
 export { default as TextField } from './TextField';
