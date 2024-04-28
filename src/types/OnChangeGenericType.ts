@@ -1,1 +1,1 @@
-export type OnChangeGenericType<T> = (fieldName: string, value: T | null) => void
+export type OnChangeGenericType<T> = (value: T | null) => void
