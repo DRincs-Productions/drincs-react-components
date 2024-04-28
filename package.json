@@ -36,5 +36,9 @@
     "pixi-vn",
     "visual",
     "visual-novel"
-  ]
+  ],
+  "dependencies": {
+    "@mui/joy": "^5.0.0-beta.36",
+    "@mui/material": "^5.15.15"
+  }
 }
