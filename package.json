@@ -33,15 +33,6 @@
     "typescript": "^5.4.2",
     "vitest": "^1.4.0"
   },
-  "keywords": [
-    "game",
-    "js",
-    "novel",
-    "pixi",
-    "pixi-vn",
-    "visual",
-    "visual-novel"
-  ],
   "dependencies": {
     "@mui/joy": "^5.0.0-beta.36",
     "@mui/material": "^5.15.15",
