@@ -4,9 +4,24 @@
         "editor.defaultFormatter": "vscode.typescript-language-features",
         "editor.formatOnSave": true
     },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.formatOnSave": true
+    },
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features",
         "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.formatOnSave": true
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features",
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
     },
     // reorganise imports
     "editor.codeActionsOnSave": {
@@ -20,6 +35,13 @@
     // move file
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
+    // color
+    "vscode-color-picker.languages": [
+        "javascript",
+        "typescript",
+        "javascriptreact",
+        "typescriptreact",
+    ],
     // olther
     "extensions.ignoreRecommendations": false,
 }
