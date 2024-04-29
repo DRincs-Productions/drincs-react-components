@@ -1,7 +1,9 @@
-import { CssVarsProvider as JoyCssVarsProvider } from '@mui/joy/styles';
+import { useTheme as useThemeJoy } from "@mui/joy";
+import { extendTheme as extendThemeJoy, CssVarsProvider as JoyCssVarsProvider } from '@mui/joy/styles';
 import { SupportedColorScheme } from "@mui/joy/styles/types";
 import {
-    Experimental_CssVarsProvider as MaterialCssVarsProvider
+    Experimental_CssVarsProvider as MaterialCssVarsProvider,
+    useTheme as materialUseTheme
 } from '@mui/material/styles';
 
 type Mode = 'light' | 'dark' | 'system';
@@ -81,3 +83,7 @@ export default function CssVarsProvider(props: CssVarsProviderProps) {
         </MaterialCssVarsProvider>
     );
 }
+
+export const extendTheme = extendThemeJoy
+export const useTheme = useThemeJoy
+export const useThemeMaterial = materialUseTheme
