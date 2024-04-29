@@ -5,6 +5,7 @@ export { default as ButtonFab } from './ButtonFab';
 export { default as Checkbox } from './Checkbox';
 export { default as CheckboxFormControlBase } from './CheckboxFormControlBase';
 export { default as CheckboxWithForm } from './CheckboxWithForm';
+export { default as CheckboxWithFormControlled } from './CheckboxWithFormControlled';
 export { default as ChipCheckbox } from './ChipCheckbox';
 export { default as Link } from './Link';
 export { default as Sheet } from './Sheet';
