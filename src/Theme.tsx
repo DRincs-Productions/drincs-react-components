@@ -44,7 +44,12 @@ interface CssVarsProviderProps extends CssVarsProviderConfig<SupportedColorSchem
     themeMaterial?: {
         cssVarPrefix?: string | undefined;
         colorSchemes: Record<SupportedColorScheme, Record<string, any>>;
-    } | undefined
+    } | {
+        $$material: {
+            cssVarPrefix?: string | undefined;
+            colorSchemes: Record<SupportedColorScheme, Record<string, any>>;
+        };
+    } | undefined;
     themeJoy?: {
         cssVarPrefix?: string | undefined;
         colorSchemes: Record<SupportedColorScheme, Record<string, any>>;
