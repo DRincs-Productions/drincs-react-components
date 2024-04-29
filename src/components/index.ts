@@ -10,6 +10,7 @@ export { default as ChipCheckbox } from './ChipCheckbox';
 export { default as IconButton } from './IconButton';
 export { default as Link } from './Link';
 export { default as ModalDialog } from './ModalDialog';
+export { default as ModalDialogExtended } from './ModalDialogExtended';
 export { default as Sheet } from './Sheet';
 export { default as TabsGenerator } from './TabsGenerator';
 export { default as TextField } from './TextField';
