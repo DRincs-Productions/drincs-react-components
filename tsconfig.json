@@ -12,6 +12,11 @@
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "noErrorTruncation": false,
-    "allowJs": true
+    "allowJs": true,
+    "paths": {
+      "@mui/material/styles": [
+        "./node_modules/@mui/material/styles"
+      ]
+    },
   }
 }
