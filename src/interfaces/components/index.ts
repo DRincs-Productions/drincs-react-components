@@ -8,6 +8,7 @@ export { default as CheckboxWithFormControlledProps } from './CheckboxWithFormCo
 export { default as CheckboxWithFormProps } from './CheckboxWithFormProps';
 export { default as IconButtonProps } from './IconButtonProps';
 export { default as LinkProps } from './LinkProps';
+export { default as ModalDialogProps } from './ModalDialogProps';
 export { TabsGeneratorItem, default as TabsGeneratorProps } from './TabsGeneratorProps';
 export { default as TextFieldControlledProps } from './TextFieldControlledProps';
 export { default as TextFieldProps } from './TextFieldProps';
