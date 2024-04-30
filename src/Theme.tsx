@@ -28,7 +28,7 @@ interface CssVarsProviderConfig<ColorScheme extends string> {
      * - provides string if the design system has one default color scheme (either light or dark)
      * - provides object if the design system has default light & dark color schemes
      */
-    defaultColorScheme: ColorScheme | { light: ColorScheme; dark: ColorScheme };
+    defaultColorScheme?: ColorScheme | { light: ColorScheme; dark: ColorScheme };
     /**
      * Design system default mode
      * @default 'light'
