@@ -1,3 +1,4 @@
+export { default as Alert } from './Alert';
 export { default as Autocomplete } from './Autocomplete';
 export { default as AutocompleteControlled } from './AutocompleteControlled';
 export { default as Button } from './Button';
