@@ -42,6 +42,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.15",
     "@mui/joy": "^5.0.0-beta.36",
-    "@mui/material": "^5.15.15"
+    "@mui/material": "^5.15.15",
+    "shade-generator": "^1.2.7"
   }
 }
