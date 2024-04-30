@@ -1,5 +1,6 @@
 import { AutocompleteChangeDetails, AutocompleteChangeReason, Autocomplete as AutocompleteJoy, createFilterOptions } from '@mui/joy';
 import { AutocompleteValue } from '@mui/material';
+import { SyntheticEvent } from 'react';
 import { FieldPath } from 'react-hook-form';
 import AutocompleteProps from '../interfaces/components/AutocompleteProps';
 import ErrorComponent from './ErrorComponent';
@@ -66,7 +67,7 @@ export default function Autocomplete<T extends object>(props: AutocompleteProps<
     } = props;
 
     const autocompleteOnChange = (
-        event: React.SyntheticEvent,
+        event: SyntheticEvent,
         value: AutocompleteValue<T, any, any, any>,
         reason: AutocompleteChangeReason,
         details?: AutocompleteChangeDetails<T>) => {

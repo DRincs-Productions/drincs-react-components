@@ -1,7 +1,8 @@
 import { ButtonProps as ButtonPropsJoy, ButtonTypeMap } from '@mui/joy';
+import { ElementType } from 'react';
 
 export default interface ButtonProps extends ButtonPropsJoy<ButtonTypeMap['defaultComponent'], {
-    component?: React.ElementType;
+    component?: ElementType;
 }> {
     ariaLabel?: string
 }
