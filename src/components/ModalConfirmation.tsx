@@ -1,3 +1,4 @@
+import { Typography } from '@mui/joy';
 import { useState } from 'react';
 import { ModalConfirmationProps } from '../interfaces/components';
 import CButton from './Button';
@@ -13,6 +14,9 @@ export default function ModalConfirmation(props: ModalConfirmationProps) {
         , disabledConfirm
         , confirmText
         , cancelText
+        , startDecorator
+        , variantButton = "outlined"
+        , headText
         , ...rest
     } = props
     const [loading, setLoading] = useState<boolean>(false)
@@ -21,9 +25,14 @@ export default function ModalConfirmation(props: ModalConfirmationProps) {
         <ModalDialogExtended
             setOpen={setOpen}
             color={color}
+            head={<Typography level="h4"
+                startDecorator={startDecorator}
+            >
+                {headText}
+            </Typography>}
             actions={[
                 <CButton
-                    variant="solid"
+                    variant={variantButton}
                     color={color}
                     onClick={() => {
                         if (onClick) {
@@ -43,6 +52,7 @@ export default function ModalConfirmation(props: ModalConfirmationProps) {
                     disabled={disabledConfirm}
                     fullWidth={false}
                     loading={loading}
+                    startDecorator={startDecorator}
                 >
                     {confirmText || 'Confirm'}
                 </CButton>,
