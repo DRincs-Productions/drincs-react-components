@@ -19,6 +19,7 @@ export { default as ModalDialog } from './ModalDialog';
 export { default as ModalDialogExtended } from './ModalDialogExtended';
 export { default as Sheet } from './Sheet';
 export { default as TabsGenerator } from './TabsGenerator';
+export { default as Textarea } from './Textarea';
 export { default as TextField } from './TextField';
 export { default as TextFieldControlled } from './TextFieldControlled';
 export { default as TextFormControlBase } from './TextFormControlBase';
