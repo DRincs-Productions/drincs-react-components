@@ -3,6 +3,7 @@ import { extendTheme as extendThemeJoy, CssVarsProvider as JoyCssVarsProvider } 
 import { SupportedColorScheme } from "@mui/joy/styles/types";
 import {
     Experimental_CssVarsProvider as MaterialCssVarsProvider,
+    experimental_extendTheme as materialExtendTheme,
     useTheme as materialUseTheme
 } from '@mui/material/styles';
 
@@ -85,5 +86,6 @@ export default function CssVarsProvider(props: CssVarsProviderProps) {
 }
 
 export const extendTheme = extendThemeJoy
+export const extendThemeMaterial = materialExtendTheme
 export const useTheme = useThemeJoy
 export const useThemeMaterial = materialUseTheme
