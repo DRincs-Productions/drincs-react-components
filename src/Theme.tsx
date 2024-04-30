@@ -7,7 +7,7 @@ import {
     useTheme as materialUseTheme
 } from '@mui/material/styles';
 import { ReactNode } from "react";
-import ShadeGenerator from "shade-generator";
+import { ShadeGenerator } from "./ShadeGenerator/shadeGenerator";
 
 type Mode = 'light' | 'dark' | 'system';
 interface CssVarsProviderConfig<ColorScheme extends string> {

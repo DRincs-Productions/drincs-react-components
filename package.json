@@ -35,8 +35,7 @@
   "peerDependencies": {
     "react": ">=16.8.6",
     "react-hook-form": ">=7.0.0",
-    "react-router-dom": ">=6.0.0",
-    "shade-generator": ">=1.2.7"
+    "react-router-dom": ">=6.0.0"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
