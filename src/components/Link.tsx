@@ -11,8 +11,8 @@ export default function Link({
 }: LinkProps) {
     return (
         <LinkJoy
-            {...rest}
             component={RouterLink}
+            {...rest}
         >
             <Typography
                 textColor={
