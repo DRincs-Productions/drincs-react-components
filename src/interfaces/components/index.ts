@@ -16,4 +16,5 @@ export { TabsGeneratorItem, default as TabsGeneratorProps } from './TabsGenerato
 export { default as TextFieldControlledProps } from './TextFieldControlledProps';
 export { default as TextFieldProps } from './TextFieldProps';
 export { default as TextFormControlBaseProps } from './TextFormControlBaseProps';
+export { default as TypewriterProps } from './TypewriterProps';
 
