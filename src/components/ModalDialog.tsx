@@ -3,9 +3,9 @@ import { default as ModalDialogJoy } from '@mui/joy/ModalDialog';
 import { Transition } from 'react-transition-group';
 import ModalDialogProps from '../interfaces/components/ModalDialogProps';
 
-export default function ModalDialog({ sx, open, setOpen, ...rest }: ModalDialogProps) {
+export default function ModalDialog({ sx, open, setOpen, transitionTimeout = 400, ...rest }: ModalDialogProps) {
     return (
-        <Transition in={open} timeout={400}>
+        <Transition in={open} timeout={transitionTimeout}>
             {(state: string) => (
                 <Modal
                     keepMounted
@@ -16,7 +16,7 @@ export default function ModalDialog({ sx, open, setOpen, ...rest }: ModalDialogP
                             sx: {
                                 opacity: 0,
                                 backdropFilter: 'none',
-                                transition: `opacity 200ms, backdrop-filter 200ms`,
+                                transition: `opacity ${transitionTimeout}ms, backdrop-filter ${transitionTimeout}ms`,
                                 ...{
                                     entering: { opacity: 1, backdropFilter: 'blur(8px)' },
                                     entered: { opacity: 1, backdropFilter: 'blur(8px)' },
@@ -31,7 +31,7 @@ export default function ModalDialog({ sx, open, setOpen, ...rest }: ModalDialogP
                     <ModalDialogJoy
                         sx={{
                             opacity: 0,
-                            transition: `opacity 50ms`,
+                            transition: `opacity ${transitionTimeout * 0.75}ms`,
                             ...{
                                 entering: { opacity: 1 },
                                 entered: { opacity: 1 },
