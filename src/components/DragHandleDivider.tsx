@@ -1,6 +1,6 @@
-import DragHandleIcon from '@mui/icons-material/DragHandle';
+import { DragHandle } from "@mui/icons-material";
 import { Divider, useTheme } from "@mui/joy";
-import { DragHandleDividerProps } from '../interfaces/components';
+import { DragHandleDividerProps } from "../interfaces/components";
 
 export default function DragHandleDivider(props: DragHandleDividerProps) {
     const {
@@ -14,7 +14,7 @@ export default function DragHandleDivider(props: DragHandleDividerProps) {
             orientation={orientation}
             {...rest}
         >
-            <DragHandleIcon
+            <DragHandle
                 sx={{
                     cursor: orientation === "vertical" ? "col-resize" : "row-resize",
                     zIndex: 100,
