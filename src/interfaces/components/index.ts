@@ -6,6 +6,7 @@ export { default as CheckboxFormControlBaseProps } from './CheckboxFormControlBa
 export { default as CheckboxProps } from './CheckboxProps';
 export { default as CheckboxWithFormControlledProps } from './CheckboxWithFormControlledProps';
 export { default as CheckboxWithFormProps } from './CheckboxWithFormProps';
+export { default as CopyrightProps } from './CopyrightProps';
 export { default as DragHandleDividerProps } from './DragHandleDividerProps';
 export { default as IconButtonProps } from './IconButtonProps';
 export { default as LinkProps } from './LinkProps';
