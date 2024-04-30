@@ -1,6 +1,6 @@
 import DragHandleIcon from '@mui/icons-material/DragHandle';
 import { Divider, useTheme } from "@mui/joy";
-import DragHandleDividerProps from '../interfaces/components/DragHandleDividerProps';
+import { DragHandleDividerProps } from '../interfaces/components';
 
 export default function DragHandleDivider(props: DragHandleDividerProps) {
     const {
