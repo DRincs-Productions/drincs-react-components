@@ -1,6 +1,6 @@
 import { Chip as ChipJoy, Tooltip } from '@mui/joy';
 import ChipProps from '../interfaces/components/ChipProps';
-import DRErrorComponent from './DRErrorComponent';
+import ErrorComponent from './ErrorComponent';
 
 export default function Chip(props: ChipProps) {
     const {
@@ -19,6 +19,6 @@ export default function Chip(props: ChipProps) {
             </Tooltip>
         );
     } catch (error) {
-        return <DRErrorComponent error={error} text={"Chip"} />
+        return <ErrorComponent error={error} text={"Chip"} />
     }
 }
