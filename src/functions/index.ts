@@ -1,0 +1,2 @@
+export { resizeWindowsHandler } from './ComponentFunctions';
+
