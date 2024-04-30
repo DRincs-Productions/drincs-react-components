@@ -1,4 +1,5 @@
 import { VariantProp } from "@mui/joy";
+import { ReactNode } from "react";
 import ModalDialogExtendedProps from "./ModalDialogExtendedProps";
 
 export default interface ModalConfirmationProps extends Omit<ModalDialogExtendedProps, "actions"> {
@@ -10,15 +11,15 @@ export default interface ModalConfirmationProps extends Omit<ModalDialogExtended
      * @returns true if the dialog should be closed
      */
     onClickAsync?: () => Promise<boolean>
-    children?: React.ReactNode
-    head?: string | React.ReactNode
+    children?: ReactNode
+    head?: string | ReactNode
     disabledConfirm?: boolean
     cancelText?: string
     confirmText?: string
     /**
      * Element placed before the children.
      */
-    startDecorator?: React.ReactNode
+    startDecorator?: ReactNode
     /**
      * The [global variant](https://mui.com/joy-ui/main-features/global-variants/) to use.
      * @default 'solid'

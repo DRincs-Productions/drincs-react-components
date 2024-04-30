@@ -6,6 +6,7 @@ import {
     experimental_extendTheme as materialExtendTheme,
     useTheme as materialUseTheme
 } from '@mui/material/styles';
+import { ReactNode } from "react";
 import ShadeGenerator from "shade-generator";
 
 type Mode = 'light' | 'dark' | 'system';
@@ -44,7 +45,7 @@ interface CssVarsProviderConfig<ColorScheme extends string> {
 }
 
 interface CssVarsProviderProps extends CssVarsProviderConfig<SupportedColorScheme> {
-    children: React.ReactNode,
+    children: ReactNode,
     themeMaterial?: {
         cssVarPrefix?: string | undefined;
         colorSchemes: Record<SupportedColorScheme, Record<string, any>>;
