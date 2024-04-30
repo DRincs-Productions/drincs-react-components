@@ -32,6 +32,7 @@ export default function ModalConfirmation(props: ModalConfirmationProps) {
             </Typography>}
             actions={[
                 <CButton
+                    id='confirm-button'
                     variant={variantButton}
                     color={color}
                     onClick={() => {
@@ -57,6 +58,7 @@ export default function ModalConfirmation(props: ModalConfirmationProps) {
                     {confirmText || 'Confirm'}
                 </CButton>,
                 <CButton
+                    id='cancel-button'
                     variant="plain"
                     color="neutral"
                     onClick={() => setOpen(false)}
