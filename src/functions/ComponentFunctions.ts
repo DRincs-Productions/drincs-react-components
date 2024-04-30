@@ -1,10 +1,8 @@
-import { Dispatch, MouseEvent, SetStateAction } from "react";
-
 type WindowsSize = {
     x: number,
     y: number,
 }
-export function resizeWindowsHandler<T>(mouseDownEvent: MouseEvent<T, MouseEvent>, size: WindowsSize, setSize: Dispatch<SetStateAction<WindowsSize>>) {
+export function resizeWindowsHandler<T>(mouseDownEvent: React.MouseEvent<T, MouseEvent>, size: WindowsSize, setSize: React.Dispatch<React.SetStateAction<WindowsSize>>) {
     const startSize = size;
     const startPosition = { x: mouseDownEvent.pageX, y: mouseDownEvent.pageY };
 
