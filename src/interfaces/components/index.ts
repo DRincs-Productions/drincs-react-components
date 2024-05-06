@@ -11,6 +11,7 @@ export { default as ChipProps } from './ChipProps';
 export { default as CopyrightProps } from './CopyrightProps';
 export { default as DragHandleDividerProps } from './DragHandleDividerProps';
 export { default as IconButtonProps } from './IconButtonProps';
+export { default as ImageSrcProps } from './ImageSrcProps';
 export { default as LinkProps } from './LinkProps';
 export { default as ModalConfirmationProps } from './ModalConfirmationProps';
 export { default as ModalDialogExtendedProps } from './ModalDialogExtendedProps';
