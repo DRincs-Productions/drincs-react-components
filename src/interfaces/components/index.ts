@@ -15,6 +15,7 @@ export { default as LinkProps } from './LinkProps';
 export { default as ModalConfirmationProps } from './ModalConfirmationProps';
 export { default as ModalDialogExtendedProps } from './ModalDialogExtendedProps';
 export { default as ModalDialogProps } from './ModalDialogProps';
+export { default as RoundIconButtonProps } from './RoundIconButtonProps';
 export { TabsGeneratorItem, default as TabsGeneratorProps } from './TabsGeneratorProps';
 export { default as TextareaProps } from './TextareaProps';
 export { default as TextFieldControlledProps } from './TextFieldControlledProps';
