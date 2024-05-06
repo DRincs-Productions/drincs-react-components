@@ -13,6 +13,7 @@ export { default as CircularIndeterminate } from './CircularIndeterminate';
 export { default as Copyright } from './Copyright';
 export { default as DragHandleDivider } from './DragHandleDivider';
 export { default as IconButton } from './IconButton';
+export { default as ImageBackdrop } from './ImageBackdrop';
 export { default as ImageSrc } from './ImageSrc';
 export { default as Link } from './Link';
 export { default as ModalConfirmation } from './ModalConfirmation';
