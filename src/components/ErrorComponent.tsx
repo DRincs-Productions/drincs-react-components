@@ -1,4 +1,4 @@
-import { useTheme } from "@mui/joy";
+import { useTheme } from "../Theme"
 
 interface ErrorComponentProps {
     error: any,

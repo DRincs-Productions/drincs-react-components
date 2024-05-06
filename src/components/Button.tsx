@@ -1,14 +1,17 @@
 import { Button as ButtonJoy, Tooltip } from '@mui/joy';
 import { ButtonProps } from '../interfaces/components';
+import { useTheme } from '../Theme';
 import ErrorComponent from './ErrorComponent';
 
 export default function Button(props: ButtonProps) {
+    const theme = useTheme()
     const {
         children,
         ariaLabel,
         fullWidth = true,
         variant = "solid",
         color = "primary",
+        sx,
         ...rest
     } = props;
 
@@ -23,6 +26,27 @@ export default function Button(props: ButtonProps) {
                     title={ariaLabel}
                     variant={variant}
                     color={color}
+                    sx={{
+                        ...sx,
+                        '&:hover': {
+                            '& .ImageBackdrop-root': {
+                                backgroundColor: theme.palette.common.white,
+                                opacity: 0.15,
+                            }
+                        },
+                        "&:disabled": {
+                            '& .ImageBackdrop-root': {
+                                backgroundColor: theme.palette.common.black,
+                                opacity: 0.5,
+                            }
+                        },
+                        "&:active": {
+                            '& .ImageBackdrop-root': {
+                                backgroundColor: theme.palette.common.white,
+                                opacity: 0.25,
+                            }
+                        }
+                    }}
                 >
                     {children}
                 </ButtonJoy>
