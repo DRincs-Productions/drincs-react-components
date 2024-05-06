@@ -19,6 +19,7 @@ export { default as ModalConfirmation } from './ModalConfirmation';
 export { default as ModalDialog } from './ModalDialog';
 export { default as ModalDialogExtended } from './ModalDialogExtended';
 export { default as RoundIconButton } from './RoundIconButton';
+export { default as RoundImageSrc } from './RoundImageSrc';
 export { default as Sheet } from './Sheet';
 export { default as TabsGenerator } from './TabsGenerator';
 export { default as Textarea } from './Textarea';
