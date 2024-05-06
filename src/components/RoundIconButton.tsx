@@ -14,6 +14,9 @@ export default function RoundIconButton(props: RoundIconButtonProps) {
                 borderRadius: "50%",
                 height: circumference,
                 width: circumference,
+                '& .ImageBackdrop-root': {
+                    borderRadius: "50%",
+                },
                 ...sx
             }}
             {...rest}
