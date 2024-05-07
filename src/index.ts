@@ -1,5 +1,5 @@
-export { Box, Grid, Theme, Typography } from '@mui/joy';
-export { Fab, FabProps } from '@mui/material';
+export { Box, Grid, Typography } from '@mui/joy';
+export { Fab } from '@mui/material';
 export * from './components';
 export * from './functions';
 export * from './interfaces/components';
