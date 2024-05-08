@@ -10,6 +10,7 @@ import {
 } from '@mui/material/styles';
 import { ReactNode } from "react";
 import { ShadeGenerator } from "./ShadeGenerator/shadeGenerator";
+import PaletteRange, { DefaultPaletteRange } from "./interfaces/PaletteRange";
 
 type Mode = 'light' | 'dark' | 'system';
 interface CssVarsProviderConfig<ColorScheme extends string> {
@@ -108,7 +109,7 @@ export const useThemeMaterial = materialUseTheme
  *     "900": "#01579b"
  * }
  */
-export function get10ColorShades(color: string) {
+export function get10ColorShades(color: string): DefaultPaletteRange {
     return {
         "50": ShadeGenerator.hue(color).shade("10").hex(),
         "100": ShadeGenerator.hue(color).shade("20").hex(),
@@ -120,5 +121,27 @@ export function get10ColorShades(color: string) {
         "700": ShadeGenerator.hue(color).shade("300").hex(),
         "800": ShadeGenerator.hue(color).shade("400").hex(),
         "900": ShadeGenerator.hue(color).shade("500").hex(),
+    }
+}
+
+/**
+ * Create a palette range based on the color you pass in.
+ * @param name The name of the palette range. For example, 'secondary'
+ * @param color The color you want to base the palette range on. For example, '#03a9f4'
+ * @returns 
+ */
+export function createPaletteRange(name: string, color: string): PaletteRange {
+    return {
+        ...get10ColorShades(color),
+        solidBg: `var(--joy-palette-${name}-400)`,
+        solidActiveBg: `var(--joy-palette-${name}-500)`,
+        outlinedBorder: `var(--joy-palette-${name}-500)`,
+        outlinedColor: `var(--joy-palette-${name}-700)`,
+        outlinedActiveBg: `var(--joy-palette-${name}-100)`,
+        softColor: `var(--joy-palette-${name}-800)`,
+        softBg: `var(--joy-palette-${name}-200)`,
+        softActiveBg: `var(--joy-palette-${name}-300)`,
+        plainColor: `var(--joy-palette-${name}-700)`,
+        plainActiveBg: `var(--joy-palette-${name}-100)`,
     }
 }
