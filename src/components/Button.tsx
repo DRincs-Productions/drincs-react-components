@@ -28,6 +28,9 @@ export default function Button(props: ButtonProps) {
                     color={color}
                     sx={{
                         ...sx,
+                        '& .ImageSrc-root': {
+                            borderRadius: "var(--Button-radius, var(--joy-radius-sm))",
+                        },
                         '&:hover': {
                             '& .ImageBackdrop-root': {
                                 backgroundColor: theme.palette.common.white,
