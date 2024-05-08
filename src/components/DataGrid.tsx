@@ -52,6 +52,7 @@ export default function DataGrid<T extends GridValidRowModel>(props: DataGridPro
                 <DataGridX
                     sx={{
                         height: height,
+                        transition: 'transform 0.2s, height 0.2s',
                         ...sx,
                     }}
                     rows={internalData}
