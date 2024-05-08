@@ -1,7 +1,9 @@
 import { useTheme as useThemeJoy } from "@mui/joy";
 import { extendTheme as extendThemeJoy, CssVarsProvider as JoyCssVarsProvider } from '@mui/joy/styles';
 import { SupportedColorScheme } from "@mui/joy/styles/types";
+import { CssBaseline, CssVarsTheme, Theme } from "@mui/material";
 import {
+    THEME_ID as MATERIAL_THEME_ID,
     Experimental_CssVarsProvider as MaterialCssVarsProvider,
     experimental_extendTheme as materialExtendTheme,
     useTheme as materialUseTheme
@@ -46,15 +48,7 @@ interface CssVarsProviderConfig<ColorScheme extends string> {
 
 interface CssVarsProviderProps extends CssVarsProviderConfig<SupportedColorScheme> {
     children: ReactNode,
-    themeMaterial?: {
-        cssVarPrefix?: string | undefined;
-        colorSchemes: Record<SupportedColorScheme, Record<string, any>>;
-    } | {
-        $$material: {
-            cssVarPrefix?: string | undefined;
-            colorSchemes: Record<SupportedColorScheme, Record<string, any>>;
-        };
-    } | undefined;
+    themeMaterial?: Omit<Theme, "palette" | "applyStyles"> & CssVarsTheme;
     themeJoy?: {
         cssVarPrefix?: string | undefined;
         colorSchemes: Record<SupportedColorScheme, Record<string, any>>;
@@ -64,23 +58,27 @@ interface CssVarsProviderProps extends CssVarsProviderConfig<SupportedColorSchem
             colorSchemes: Record<SupportedColorScheme, Record<string, any>>;
         };
     } | undefined;
+    defaultMode: 'light' | 'dark' | 'system'
 }
 
 export default function CssVarsProvider(props: CssVarsProviderProps) {
     const {
         children,
-        themeMaterial,
+        themeMaterial = materialExtendTheme(),
         themeJoy,
+        defaultMode,
     } = props;
+
     return (
         <MaterialCssVarsProvider
-            defaultMode="light"
-            theme={themeMaterial}
+            defaultMode={defaultMode}
+            theme={{ [MATERIAL_THEME_ID]: themeMaterial }}
         >
             <JoyCssVarsProvider
-                defaultMode="light"
+                defaultMode={defaultMode}
                 theme={themeJoy}
             >
+                <CssBaseline enableColorScheme />
                 {children}
             </JoyCssVarsProvider>
         </MaterialCssVarsProvider>
