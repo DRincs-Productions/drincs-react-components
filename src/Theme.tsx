@@ -133,8 +133,11 @@ export function get10ColorShades(color: string): DefaultPaletteRange {
 export function createPaletteRange(name: string, color: string): PaletteRange {
     return {
         ...get10ColorShades(color),
-        solidBg: `var(--joy-palette-${name}-400)`,
-        solidActiveBg: `var(--joy-palette-${name}-500)`,
+        solidBg: `var(--joy-palette-${name}-500)`,
+        solidHoverBg: `var(--joy-palette-${name}-600)`,
+        solidActiveBg: `var(--joy-palette-${name}-700)`,
+        solidDisabledColor: `var(--joy-palette-neutral-500)`,
+        solidDisabledBg: `var(--joy-palette-neutral-800)`,
         outlinedBorder: `var(--joy-palette-${name}-500)`,
         outlinedColor: `var(--joy-palette-${name}-700)`,
         outlinedActiveBg: `var(--joy-palette-${name}-100)`,

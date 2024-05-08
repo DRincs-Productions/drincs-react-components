@@ -18,10 +18,10 @@ export default interface PaletteRange extends DefaultPaletteRange {
     softDisabledBg?: string;
     solidColor?: string;
     solidBg: string;
-    solidHoverBg?: string;
+    solidHoverBg: string;
     solidActiveBg: string;
-    solidDisabledColor?: string;
-    solidDisabledBg?: string;
+    solidDisabledColor: string;
+    solidDisabledBg: string;
 }
 
 export interface DefaultPaletteRange {
