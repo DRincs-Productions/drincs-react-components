@@ -4,6 +4,7 @@ export default interface DataGridProps<T extends GridValidRowModel> extends Data
     columns: GridColDef<T>[]
     hidenColumns?: string[]
     height?: number
+    head?: React.ReactNode
 }
 
 export interface GridValidRowModel extends GridValidRowModelX {

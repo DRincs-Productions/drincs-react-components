@@ -29,6 +29,7 @@ export default function DataGrid<T extends GridValidRowModel>(props: DataGridPro
         hidenColumns,
         height = 600,
         sx,
+        head,
         ...rest
     } = props;
 
@@ -47,6 +48,7 @@ export default function DataGrid<T extends GridValidRowModel>(props: DataGridPro
                     width: '100%',
                 }}
             >
+                {head}
                 <DataGridX
                     sx={{
                         height: height,
