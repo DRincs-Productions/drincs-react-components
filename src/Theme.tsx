@@ -125,26 +125,72 @@ export function get10ColorShades(color: string): DefaultPaletteRange {
 }
 
 /**
- * Create a palette range based on the color you pass in.
+ * Create a palette range based on a color you pass in.
  * @param name The name of the palette range. For example, 'secondary'
  * @param color The color you want to base the palette range on. For example, '#03a9f4'
  * @returns 
  */
-export function createPaletteRange(name: string, color: string): PaletteRange {
-    return {
-        ...get10ColorShades(color),
-        solidBg: `var(--joy-palette-${name}-500)`,
-        solidHoverBg: `var(--joy-palette-${name}-600)`,
-        solidActiveBg: `var(--joy-palette-${name}-700)`,
-        solidDisabledColor: `var(--joy-palette-neutral-500)`,
-        solidDisabledBg: `var(--joy-palette-neutral-800)`,
-        outlinedBorder: `var(--joy-palette-${name}-500)`,
-        outlinedColor: `var(--joy-palette-${name}-700)`,
-        outlinedActiveBg: `var(--joy-palette-${name}-100)`,
-        softColor: `var(--joy-palette-${name}-800)`,
-        softBg: `var(--joy-palette-${name}-200)`,
-        softActiveBg: `var(--joy-palette-${name}-300)`,
-        plainColor: `var(--joy-palette-${name}-700)`,
-        plainActiveBg: `var(--joy-palette-${name}-100)`,
+export function createPaletteRange(name: string, color: string, mode: "light" | "dark", textColor?: string): PaletteRange {
+    if (mode == "dark") {
+        return {
+            ...get10ColorShades(color),
+            solidColor: textColor,
+            solidBg: `var(--joy-palette-${name}-500)`,
+            solidHoverBg: `var(--joy-palette-${name}-600)`,
+            solidActiveBg: `var(--joy-palette-${name}-700)`,
+            solidDisabledColor: `var(--joy-palette-neutral-500)`,
+            solidDisabledBg: `var(--joy-palette-neutral-800)`,
+
+            softColor: `var(--joy-palette-${name}-200)`,
+            softBg: `var(--joy-palette-${name}-800)`,
+            softHoverBg: `var(--joy-palette-${name}-700)`,
+            softActiveColor: `var(--joy-palette-${name}-100)`,
+            softActiveBg: `var(--joy-palette-${name}-600)`,
+            softDisabledColor: `var(--joy-palette-neutral-500)`,
+            softDisabledBg: `var(--joy-palette-neutral-800)`,
+
+            outlinedColor: `var(--joy-palette-${name}-200)`,
+            outlinedBorder: `var(--joy-palette-${name}-700)`,
+            outlinedHoverBg: `var(--joy-palette-${name}-800)`,
+            outlinedActiveBg: `var(--joy-palette-${name}-700)`,
+            outlinedDisabledColor: `var(--joy-palette-neutral-500)`,
+            outlinedDisabledBorder: `var(--joy-palette-neutral-800)`,
+
+            plainColor: `var(--joy-palette-${name}-300)`,
+            plainHoverBg: `var(--joy-palette-${name}-800)`,
+            plainActiveBg: `var(--joy-palette-${name}-700)`,
+            plainDisabledColor: `var(--joy-palette-neutral-500)`,
+        }
+    }
+    else {
+        return {
+            ...get10ColorShades(color),
+            solidColor: textColor,
+            solidBg: `var(--joy-palette-${name}-500)`,
+            solidHoverBg: `var(--joy-palette-${name}-600)`,
+            solidActiveBg: `var(--joy-palette-${name}-700)`,
+            solidDisabledColor: `var(--joy-palette-neutral-400)`,
+            solidDisabledBg: `var(--joy-palette-neutral-100)`,
+
+            softColor: `var(--joy-palette-${name}-700)`,
+            softBg: `var(--joy-palette-${name}-100)`,
+            softHoverBg: `var(--joy-palette-${name}-200)`,
+            softActiveColor: `var(--joy-palette-${name}-800)`,
+            softActiveBg: `var(--joy-palette-${name}-300)`,
+            softDisabledColor: `var(--joy-palette-neutral-400)`,
+            softDisabledBg: `var(--joy-palette-neutral-50)`,
+
+            outlinedColor: `var(--joy-palette-${name}-500)`,
+            outlinedBorder: `var(--joy-palette-${name}-300)`,
+            outlinedHoverBg: `var(--joy-palette-${name}-100)`,
+            outlinedActiveBg: `var(--joy-palette-${name}-200)`,
+            outlinedDisabledColor: `var(--joy-palette-neutral-400)`,
+            outlinedDisabledBorder: `var(--joy-palette-neutral-200)`,
+
+            plainColor: `var(--joy-palette-${name}-500)`,
+            plainHoverBg: `var(--joy-palette-${name}-100)`,
+            plainActiveBg: `var(--joy-palette-${name}-200)`,
+            plainDisabledColor: `var(--joy-palette-neutral-400)`,
+        }
     }
 }

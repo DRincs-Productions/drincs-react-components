@@ -1,27 +1,28 @@
 export default interface PaletteRange extends DefaultPaletteRange {
-    plainColor: string;
+    plainColor?: string;
     plainHoverBg?: string;
     plainActiveBg: string;
     plainDisabledColor?: string;
-    outlinedColor: string;
-    outlinedBorder: string;
+    outlinedColor?: string;
+    outlinedBorder?: string;
     outlinedHoverBg?: string;
     outlinedHoverBorder?: string;
-    outlinedActiveBg: string;
+    outlinedActiveBg?: string;
     outlinedDisabledColor?: string;
     outlinedDisabledBorder?: string;
-    softColor: string;
-    softBg: string;
+    softColor?: string;
+    softBg?: string;
     softHoverBg?: string;
-    softActiveBg: string;
+    softActiveColor?: string;
+    softActiveBg?: string;
     softDisabledColor?: string;
     softDisabledBg?: string;
     solidColor?: string;
-    solidBg: string;
-    solidHoverBg: string;
-    solidActiveBg: string;
-    solidDisabledColor: string;
-    solidDisabledBg: string;
+    solidBg?: string;
+    solidHoverBg?: string;
+    solidActiveBg?: string;
+    solidDisabledColor?: string;
+    solidDisabledBg?: string;
 }
 
 export interface DefaultPaletteRange {
