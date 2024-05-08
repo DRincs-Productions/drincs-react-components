@@ -11,6 +11,7 @@ export { default as Chip } from './Chip';
 export { default as ChipCheckbox } from './ChipCheckbox';
 export { default as CircularIndeterminate } from './CircularIndeterminate';
 export { default as Copyright } from './Copyright';
+export { default as DataGrid } from './DataGrid';
 export { default as DragHandleDivider } from './DragHandleDivider';
 export { default as IconButton } from './IconButton';
 export { default as ImageBackdrop } from './ImageBackdrop';
