@@ -1,4 +1,4 @@
-export { Box, Grid, Typography } from '@mui/joy';
+export { Box, Grid, Stack, Typography } from '@mui/joy';
 export { Fab } from '@mui/material';
 export * from './components';
 export * from './functions';
