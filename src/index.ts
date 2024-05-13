@@ -1,5 +1,6 @@
 export { Box, Grid, Stack, Typography } from '@mui/joy';
 export { Fab } from '@mui/material';
+export { TimeClock } from '@mui/x-date-pickers';
 export * from './components';
 export * from './functions';
 export * from './interfaces';
