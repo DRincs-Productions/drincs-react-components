@@ -1,9 +1,13 @@
-import { Controller } from 'react-hook-form';
+import { Controller, FieldPath, FieldValues } from 'react-hook-form';
 import AutocompleteControlledProps from '../interfaces/components/AutocompleteControlledProps';
 import Autocomplete from './Autocomplete';
 import ErrorComponent from './ErrorComponent';
 
-export default function AutocompleteControlled<T extends object>(props: AutocompleteControlledProps<T>) {
+export default function AutocompleteControlled<
+    T extends object,
+    TFieldValues extends FieldValues = FieldValues,
+    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+>(props: AutocompleteControlledProps<T, TFieldValues, TName>) {
     const {
         controllerProps,
         ...rest
