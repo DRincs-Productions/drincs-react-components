@@ -23,6 +23,7 @@ export { default as ModalDialog } from './ModalDialog';
 export { default as ModalDialogExtended } from './ModalDialogExtended';
 export { default as RoundIconButton } from './RoundIconButton';
 export { default as Sheet } from './Sheet';
+export { default as StackOverflow } from './StackOverflow';
 export { default as TabsGenerator } from './TabsGenerator';
 export { default as Textarea } from './Textarea';
 export { default as TextField } from './TextField';
