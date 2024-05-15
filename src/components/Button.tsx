@@ -29,7 +29,7 @@ export default function Button(props: ButtonProps) {
                     color={color}
                     sx={{
                         ...sx,
-                        boxShadow: elevation ? `0 0 ${elevation * 2}px ${elevation}px #000000be` : undefined,
+                        boxShadow: elevation ? useTheme().shadow[elevation] : undefined,
                         '& .ImageSrc-root': {
                             borderRadius: "var(--Button-radius, var(--joy-radius-sm))",
                         },
