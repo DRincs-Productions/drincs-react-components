@@ -1,4 +1,4 @@
-import { styled } from '@mui/joy';
+import { styled } from '@mui/material';
 import KeyframePulseProps from '../interfaces/components/KeyframePulseProps';
 
 function KeyframePulseBase({
