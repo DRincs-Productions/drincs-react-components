@@ -1,28 +1,18 @@
-import { keyframes } from '@emotion/react';
+import { styled } from '@mui/joy';
 import KeyframePulseProps from '../interfaces/components/KeyframePulseProps';
 
-export default function KeyframePulse({
+function KeyframePulseBase({
     children,
     style,
+    animationDuration = 2,
+    animationDelay = 0.5,
     ...rest
 }: KeyframePulseProps) {
     return (
         <div
             style={{
-                animation: `${keyframes({
-                    "0%": {
-                        transform: "scale(1)",
-                    },
-                    "50%": {
-                        transform: "scale(1.1)",
-                    },
-                    "100%": {
-                        transform: "scale(1)",
-                    }
-                })}`,
-                animationName: "pulse",
-                animationDuration: "2s",
-                animationDelay: ".5s",
+                animationDuration: `${animationDuration}s`,
+                animationDelay: `${animationDelay}s`,
                 ...style
             }}
             {...rest}
@@ -31,3 +21,21 @@ export default function KeyframePulse({
         </div>
     );
 }
+
+const KeyframePulse = styled(KeyframePulseBase)({
+    animationName: "pulse",
+
+    "@keyframes pulse": {
+        "0%": {
+            transform: "scale(1)",
+        },
+        "50%": {
+            transform: "scale(1.1)",
+        },
+        "100%": {
+            transform: "scale(1)",
+        }
+    },
+});
+
+export default KeyframePulse;
