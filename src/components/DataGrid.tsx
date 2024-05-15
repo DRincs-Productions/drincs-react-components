@@ -46,6 +46,8 @@ export default function DataGrid<T extends GridValidRowModel>(props: DataGridPro
             <Sheet
                 sx={{
                     width: '100%',
+                    padding: "16px",
+                    ...sx,
                 }}
             >
                 {head}
@@ -53,7 +55,6 @@ export default function DataGrid<T extends GridValidRowModel>(props: DataGridPro
                     sx={{
                         height: height,
                         transition: 'transform 0.2s, height 0.2s',
-                        ...sx,
                     }}
                     rows={internalData}
                     columns={columns}
