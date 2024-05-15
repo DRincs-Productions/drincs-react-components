@@ -5,4 +5,5 @@ export default interface ButtonProps extends ButtonPropsJoy<ButtonTypeMap['defau
     component?: ElementType;
 }> {
     ariaLabel?: string
+    elevation?: number
 }

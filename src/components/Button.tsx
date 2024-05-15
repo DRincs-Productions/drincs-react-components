@@ -12,6 +12,7 @@ export default function Button(props: ButtonProps) {
         variant = "solid",
         color = "primary",
         sx,
+        elevation,
         ...rest
     } = props;
 
@@ -28,6 +29,7 @@ export default function Button(props: ButtonProps) {
                     color={color}
                     sx={{
                         ...sx,
+                        boxShadow: elevation ? `0 0 ${elevation * 2}px ${elevation}px #000000be` : undefined,
                         '& .ImageSrc-root': {
                             borderRadius: "var(--Button-radius, var(--joy-radius-sm))",
                         },
