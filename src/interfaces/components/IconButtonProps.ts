@@ -1,4 +1,4 @@
-import { IconButtonProps as IconButtonPropsJoy, IconButtonTypeMap } from '@mui/joy';
+import { IconButtonProps as IconButtonPropsJoy, IconButtonTypeMap, Shadow } from '@mui/joy';
 import { ElementType } from 'react';
 
 export default interface IconButtonProps extends IconButtonPropsJoy<IconButtonTypeMap['defaultComponent'], {
@@ -7,4 +7,5 @@ export default interface IconButtonProps extends IconButtonPropsJoy<IconButtonTy
     ariaLabel?: string
     loading?: boolean
     fieldName?: string
+    elevation?: keyof Shadow
 }

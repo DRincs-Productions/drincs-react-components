@@ -13,6 +13,7 @@ export default function CIconButton(props: IconButtonProps) {
         color = "primary",
         loading,
         sx,
+        elevation,
         ...rest
     } = props;
 
@@ -41,6 +42,7 @@ export default function CIconButton(props: IconButtonProps) {
                         variant={variant}
                         color={color}
                         sx={{
+                            boxShadow: elevation ? useTheme().shadow[elevation] : undefined,
                             ...sx,
                             '&:hover': {
                                 '& .ImageBackdrop-root': {
