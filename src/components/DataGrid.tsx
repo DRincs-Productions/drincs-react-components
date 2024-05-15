@@ -30,6 +30,7 @@ export default function DataGrid<T extends GridValidRowModel>(props: DataGridPro
         height = 600,
         sx,
         head,
+        elevation,
         ...rest
     } = props;
 
@@ -44,6 +45,7 @@ export default function DataGrid<T extends GridValidRowModel>(props: DataGridPro
 
         return (
             <Sheet
+                elevation={elevation}
                 sx={{
                     width: '100%',
                     padding: "16px",

@@ -1,4 +1,4 @@
-import { SxProps } from '@mui/joy/styles/types';
+import { Shadow, SxProps } from '@mui/joy/styles/types';
 import { DataGridProps as DataGridPropsX, GridColDef, GridValidRowModel as GridValidRowModelX } from '@mui/x-data-grid';
 
 export default interface DataGridProps<T extends GridValidRowModel> extends Omit<DataGridPropsX<T>, "sx"> {
@@ -7,6 +7,7 @@ export default interface DataGridProps<T extends GridValidRowModel> extends Omit
     height?: number
     head?: React.ReactNode
     sx?: SxProps
+    elevation?: keyof Shadow
 }
 
 export interface GridValidRowModel extends GridValidRowModelX {
