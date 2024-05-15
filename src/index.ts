@@ -1,4 +1,4 @@
-export { AspectRatio, Avatar, Box, Grid, Stack, Typography } from '@mui/joy';
+export { AspectRatio, Avatar, Box, CircularProgress, Grid, Skeleton, Stack, Typography } from '@mui/joy';
 export { Fab } from '@mui/material';
 export { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 export { TimeClock } from '@mui/x-date-pickers';
