@@ -20,6 +20,7 @@ export { default as ModalConfirmationProps } from './ModalConfirmationProps';
 export { default as ModalDialogExtendedProps } from './ModalDialogExtendedProps';
 export { default as ModalDialogProps } from './ModalDialogProps';
 export { default as RoundIconButtonProps } from './RoundIconButtonProps';
+export { default as SheetProps } from './SheetProps';
 export { default as StackOverflowProps } from './StackOverflowProps';
 export { TabsGeneratorItem, default as TabsGeneratorProps } from './TabsGeneratorProps';
 export { default as TextareaProps } from './TextareaProps';
