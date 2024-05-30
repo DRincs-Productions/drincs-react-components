@@ -1,6 +1,5 @@
 import { Typography, useTheme } from '@mui/joy';
 import LinkJoy from '@mui/joy/Link';
-import { Link as RouterLink } from 'react-router-dom';
 import LinkProps from '../interfaces/components/LinkProps';
 
 export default function Link({
@@ -11,7 +10,6 @@ export default function Link({
 }: LinkProps) {
     return (
         <LinkJoy
-            component={RouterLink}
             {...rest}
         >
             <Typography
