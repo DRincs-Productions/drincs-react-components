@@ -1,6 +1,6 @@
 import { Typography } from "@mui/joy";
 import CopyrightProps from "../interfaces/components/CopyrightProps";
-import Link from "./Link";
+import LinkRouter from "./LinkRouter";
 
 export default function Copyright({ to, text }: CopyrightProps) {
     return (
@@ -9,11 +9,11 @@ export default function Copyright({ to, text }: CopyrightProps) {
             sx={{ alignSelf: 'center' }}
         >
             {"Copyright © "}
-            <Link
+            <LinkRouter
                 to={to}
             >
                 {text}
-            </Link>{" "}
+            </LinkRouter>{" "}
             {new Date().getFullYear()}
         </Typography>
     );
