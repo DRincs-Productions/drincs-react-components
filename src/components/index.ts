@@ -18,6 +18,7 @@ export { default as ImageBackdrop } from './ImageBackdrop';
 export { default as ImageSrc } from './ImageSrc';
 export { default as KeyframePulse } from './KeyframePulse';
 export { default as Link } from './Link';
+export { default as LinkRouter } from './LinkRouter';
 export { default as ModalConfirmation } from './ModalConfirmation';
 export { default as ModalDialog } from './ModalDialog';
 export { default as ModalDialogExtended } from './ModalDialogExtended';

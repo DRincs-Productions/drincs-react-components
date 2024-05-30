@@ -16,6 +16,7 @@ export { default as ImageBackdropProps } from './ImageBackdropProps';
 export { default as ImageSrcProps } from './ImageSrcProps';
 export { default as KeyframePulseProps } from './KeyframePulseProps';
 export { default as LinkProps } from './LinkProps';
+export { default as LinkRouterProps } from './LinkRouterProps';
 export { default as ModalConfirmationProps } from './ModalConfirmationProps';
 export { default as ModalDialogExtendedProps } from './ModalDialogExtendedProps';
 export { default as ModalDialogProps } from './ModalDialogProps';
