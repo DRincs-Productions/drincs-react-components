@@ -1,5 +1,5 @@
 export { AspectRatio, Avatar, Box, CircularProgress, Grid, Skeleton, Stack, Typography } from '@mui/joy';
-export { Fab } from '@mui/material';
+export { Collapse, Fab, Fade, Grow, Slide, Zoom } from '@mui/material';
 export { TimeClock } from '@mui/x-date-pickers';
 export * from './components';
 export * from './functions';
