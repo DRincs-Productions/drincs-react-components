@@ -1,17 +1,20 @@
-import { CircularProgress, IconButton, Tooltip } from '@mui/joy';
-import IconButtonProps from '../interfaces/components/IconButtonProps';
+import { CircularProgress, IconButton as IconButtonJoy, Tooltip } from '@mui/joy';
+import { useContext } from 'react';
+import LoadingContext from '../contexts/LoadingContext';
+import { IconButtonProps } from '../interfaces/components';
 import { useTheme } from '../Theme';
 import ErrorComponent from './ErrorComponent';
 
-export default function CIconButton(props: IconButtonProps) {
+export default function IconButton(props: IconButtonProps) {
     const theme = useTheme()
+    const loadingContext = useContext(LoadingContext)
     const {
-        fieldName,
+        id,
         children,
         ariaLabel,
         variant = "solid",
         color = "primary",
-        loading,
+        loading = id ? loadingContext.fieldIsLoading(id) : undefined,
         sx,
         elevation,
         ...rest
@@ -36,13 +39,13 @@ export default function CIconButton(props: IconButtonProps) {
                 title={ariaLabel}
             >
                 <div> {/* This div is necessary to avoid the tooltip to be cutted */}
-                    <IconButton
+                    <IconButtonJoy
                         {...rest}
                         title={ariaLabel}
                         variant={variant}
                         color={color}
                         sx={{
-                            boxShadow: elevation ? useTheme().shadow[elevation] : undefined,
+                            boxShadow: elevation ? theme.shadow[elevation] : undefined,
                             ...sx,
                             '&:hover': {
                                 '& .ImageBackdrop-root': {
@@ -65,11 +68,11 @@ export default function CIconButton(props: IconButtonProps) {
                         }}
                     >
                         {children}
-                    </IconButton>
+                    </IconButtonJoy>
                 </div>
             </Tooltip>
         );
     } catch (error) {
-        return <ErrorComponent error={error} text={"Icon Button"} />
+        return <ErrorComponent error={error} text={"Button"} />
     }
 }

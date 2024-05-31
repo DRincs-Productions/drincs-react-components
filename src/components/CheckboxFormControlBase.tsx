@@ -4,7 +4,7 @@ import CLErrorComponent from './ErrorComponent';
 
 export default function CheckboxFormControlBase(props: CheckboxFormControlBaseProps) {
     const {
-        helperText,
+        id,
         children,
         error,
         addHelperMarginIfIsHidden,
@@ -13,10 +13,12 @@ export default function CheckboxFormControlBase(props: CheckboxFormControlBasePr
         required,
     } = props;
     const theme = useTheme();
+    const helperText = props.helperErrorText && error ? props.helperErrorText : props.helperText;
 
     try {
         return (
             <FormControl
+                id={id ? "CheckboxFormControlBase-" + id : undefined}
                 sx={{
                     marginTop: 0.5,
                     marginBottom: helperText && addHelperMarginIfIsHidden ? 2.8 : 0.5

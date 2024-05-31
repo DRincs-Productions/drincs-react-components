@@ -1,58 +1,25 @@
 import { AutocompleteChangeDetails, AutocompleteChangeReason, Autocomplete as AutocompleteJoy, createFilterOptions } from '@mui/joy';
 import { AutocompleteValue } from '@mui/material';
-import { SyntheticEvent } from 'react';
-import { FieldPath } from 'react-hook-form';
+import { SyntheticEvent, useContext } from 'react';
+import { ErrorContext, LoadingContext, VisibilityContext } from '../contexts';
+import DisabledContext from '../contexts/DisabledContext';
+import { findSimilarItemFromLookupByProperty } from '../functions/ObjectArrayFunctions';
+import { getDescription, getDisabled } from '../functions/ObjectFunctions';
 import AutocompleteProps from '../interfaces/components/AutocompleteProps';
 import ErrorComponent from './ErrorComponent';
 import TextFormControlBase from './TextFormControlBase';
 import { TextFieldSkeleton } from './skeleton/TextFieldSkeleton';
 
-function findSimilarItemFromLookupByProperty<T extends object>(lookup: T[] | readonly T[], fieldName: FieldPath<T>, value: any): T | null | undefined {
-    if (value === null) {
-        return null;
-    }
-    if (lookup === null) {
-        console.error("findItemFromLookupByProperty lookup is null. idFieldName:" + fieldName)
-        return null;
-    }
-    if (!Array.isArray(lookup)) {
-        console.error("findItemFromLookupByProperty lookup not is array")
-        return null;
-    }
-    if (lookup.length > 0 && !lookup[0]?.hasOwnProperty(fieldName)) {
-        console.error("findItemFromLookupByProperty lookup not have a property:" + fieldName)
-        return null;
-    }
-
-    var o = lookup ? lookup.find((item: any) => { return item[fieldName].toString() === value.toString() }) : null;
-    return o;
-}
-
-function getDescription<T extends object>(option: T | undefined, descriptionFieldName: FieldPath<T>): string {
-    if (!option) {
-        return ""
-    }
-    if ((option as any)[descriptionFieldName] !== null && (option as any)[descriptionFieldName] !== undefined) {
-        return (option as any)[descriptionFieldName]
-    }
-    return ""
-}
-
-function getDisabled<T extends object>(option: T | undefined, disabledFieldName: FieldPath<T>): boolean {
-    if (!option) {
-        return false
-    }
-    if ((option as any)[disabledFieldName] !== null && (option as any)[disabledFieldName] !== undefined) {
-        return (option as any)[disabledFieldName] as boolean
-    }
-    return false
-}
-
 export default function Autocomplete<T extends object>(props: AutocompleteProps<T>) {
+    const errorContext = useContext(ErrorContext)
+    const loadingContext = useContext(LoadingContext)
+    const visibilityContext = useContext(VisibilityContext)
+    const disabledContext = useContext(DisabledContext)
     const {
         id,
         label,
         helperText,
+        onChange,
         onChangeGeneric,
         required,
         options,
@@ -60,11 +27,16 @@ export default function Autocomplete<T extends object>(props: AutocompleteProps<
         oidFieldName,
         disableFildName,
         addHelperMarginIfIsHidden,
-        loadingForm,
-        error,
-        disabled,
+        loadingForm = id ? loadingContext.fieldIsLoading(id) : undefined,
+        error: tempError,
+        disabled = id ? disabledContext.fieldIsDisabled(id) : undefined,
+        value = "", // if it is undefined it causes problems: at the first startup getOptionLabel is not used and after that it will no longer intercept the value change (I think it is a mui problem)
         ...rest
     } = props;
+    if (id && visibilityContext.fieldIsHidden(id)) {
+        return null
+    }
+    const error = tempError || (id ? errorContext.fieldIsError(id) : undefined)
 
     const autocompleteOnChange = (
         event: SyntheticEvent,
@@ -72,6 +44,7 @@ export default function Autocomplete<T extends object>(props: AutocompleteProps<
         reason: AutocompleteChangeReason,
         details?: AutocompleteChangeDetails<T>) => {
         onChangeGeneric && onChangeGeneric(value as T)
+        onChange && onChange(event, value, reason, details)
     }
 
     const getOptionLabel = (option: string | T): string => {
@@ -106,6 +79,7 @@ export default function Autocomplete<T extends object>(props: AutocompleteProps<
     try {
         return (
             <TextFormControlBase
+                id={id}
                 label={label}
                 helperText={helperText}
                 required={required}
@@ -115,6 +89,7 @@ export default function Autocomplete<T extends object>(props: AutocompleteProps<
             >
                 <AutocompleteJoy
                     {...rest}
+                    id={id}
                     options={options}
                     getOptionLabel={getOptionLabel}
                     filterOptions={filterOptions}
@@ -123,6 +98,7 @@ export default function Autocomplete<T extends object>(props: AutocompleteProps<
                     isOptionEqualToValue={isOptionEqualToValue}
                     disabled={loadingForm || disabled}
                     getOptionDisabled={disableFildName ? (option) => getDisabled(option, disableFildName) : undefined}
+                    value={value}
                 />
                 {loadingForm &&
                     <TextFieldSkeleton />

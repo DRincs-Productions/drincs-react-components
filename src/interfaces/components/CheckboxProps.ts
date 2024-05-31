@@ -5,5 +5,5 @@ import { OnChangeGenericType } from "../../types";
 export default interface CheckboxProps extends CheckboxPropsJoy<CheckboxTypeMap['defaultComponent'], {
     component?: ElementType;
 }> {
-    onChangeGeneric: OnChangeGenericType<boolean>;
+    onChangeGeneric?: OnChangeGenericType<boolean>;
 }

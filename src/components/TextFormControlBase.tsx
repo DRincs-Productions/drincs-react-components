@@ -5,8 +5,8 @@ import ErrorComponent from './ErrorComponent';
 
 export default function TextFormControlBase(props: TextFormControlBaseProps) {
     const {
+        id,
         label,
-        helperText,
         required,
         children,
         error,
@@ -14,10 +14,12 @@ export default function TextFormControlBase(props: TextFormControlBaseProps) {
         loading,
     } = props;
     const theme = useTheme();
+    const helperText = props.helperErrorText && error ? props.helperErrorText : props.helperText;
 
     try {
         return (
             <FormControl
+                id={id ? "TextFormControlBase-" + id : undefined}
                 sx={{
                     marginTop: 0.5,
                     marginBottom: isEmptyOrSpaces(helperText) && addHelperMarginIfIsHidden ? 2.8 : 0.5

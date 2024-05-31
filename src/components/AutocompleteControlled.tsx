@@ -10,17 +10,63 @@ export default function AutocompleteControlled<
 >(props: AutocompleteControlledProps<T, TFieldValues, TName>) {
     const {
         controllerProps,
+        onChange,
+        onBlur,
+        required,
+        oidFieldName,
         ...rest
     } = props;
+    const {
+        rules,
+        ...controllerRest
+    } = controllerProps;
 
     try {
         return (
             <Controller
-                {...controllerProps}
-                render={({ field }) => <Autocomplete
-                    {...field}
-                    {...rest}
-                />}
+                rules={{
+                    required: required,
+                    ...rules
+                }}
+                {...controllerRest}
+                render={({ field: { onChange: controllerOnChange, onBlur: controllerOnBlur, ref, ...field } }) => (
+                    <Autocomplete
+                        id={controllerProps.name}
+                        onChange={(e, value) => {
+                            let myvalue: null | any = null;
+                            if (value) {
+                                try {
+                                    myvalue = (value as any)[oidFieldName] as any;
+                                } catch (e) {
+                                    myvalue = null;
+                                }
+                            }
+                            let myEv = {
+                                ...e,
+                                target: {
+                                    ...e.target,
+                                    value: myvalue,
+                                },
+                            };
+                            if (onChange) {
+                                onChange(myEv, value as T, controllerOnChange);
+                            } else {
+                                controllerOnChange(myEv);
+                            }
+                        }}
+                        onBlur={() => {
+                            if (onBlur) {
+                                onBlur(controllerOnBlur);
+                            } else {
+                                controllerOnBlur();
+                            }
+                        }}
+                        required={required}
+                        oidFieldName={oidFieldName}
+                        {...field}
+                        {...rest}
+                    />
+                )}
             />
         )
     } catch (error) {

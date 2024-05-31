@@ -6,3 +6,13 @@ export default interface ComponentControlledProps<
 > {
     controllerProps: Omit<UseControllerProps<TFieldValues, TName>, "render">
 }
+
+export type OnChangeControlledType<TEvent, TValue> = (
+    event: TEvent,
+    value: TValue,
+    controllerOnChange: (...event: any[]) => void
+) => void;
+
+export type OnBlurControlledType = (
+    controllerOnBlur: (...event: any[]) => void
+) => void;

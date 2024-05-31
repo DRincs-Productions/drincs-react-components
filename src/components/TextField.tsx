@@ -1,5 +1,7 @@
 import { Input } from '@mui/joy';
-import { FocusEventHandler } from 'react';
+import { FocusEventHandler, useContext } from 'react';
+import { ErrorContext, LoadingContext, VisibilityContext } from '../contexts';
+import DisabledContext from '../contexts/DisabledContext';
 import TextFieldProps from '../interfaces/components/TextFieldProps';
 import { DefaultTextFieldValueType } from '../types/DefaultTextFieldValueType';
 import ErrorComponent from './ErrorComponent';
@@ -7,10 +9,18 @@ import TextFormControlBase from './TextFormControlBase';
 import { TextFieldSkeleton } from './skeleton/TextFieldSkeleton';
 
 export default function TextField<T extends DefaultTextFieldValueType>(props: TextFieldProps<T>) {
+    const errorContext = useContext(ErrorContext)
+    const loadingContext = useContext(LoadingContext)
+    const visibilityContext = useContext(VisibilityContext)
+    const disabledContext = useContext(DisabledContext)
+
     const {
+        id,
         label,
         helperText,
+        helperErrorText,
         defaultValue,
+        onBlur,
         onChange,
         onChangeGeneric,
         type = "text",
@@ -18,26 +28,32 @@ export default function TextField<T extends DefaultTextFieldValueType>(props: Te
         required,
         onBlurGeneric,
         addHelperMarginIfIsHidden,
-        loading,
-        disabled,
-        error,
+        loading = id ? loadingContext.fieldIsLoading(id) : undefined,
+        disabled = id ? disabledContext.fieldIsDisabled(id) : undefined,
+        error: tempError,
         maxLength = 100,
         slotProps,
         ...rest
     } = props;
+    if (id && visibilityContext.fieldIsHidden(id)) {
+        return null
+    }
+    const error = tempError || (id ? errorContext.fieldIsError(id) : undefined)
 
     const textFieldOnChange: FocusEventHandler<HTMLInputElement> | undefined = onChangeGeneric ? (event) => {
         onChangeGeneric(event.target.value as T)
     } : undefined
-    const textFieldOnBlur: FocusEventHandler<HTMLInputElement> = (event) => {
-        onBlurGeneric && onBlurGeneric(event.target.value as T)
-    }
+    const textFieldOnBlur: FocusEventHandler<HTMLInputElement> | undefined = onBlurGeneric ? (event) => {
+        onBlurGeneric(event.target.value as T)
+    } : undefined
 
     try {
         return (
             <TextFormControlBase
+                id={id}
                 label={label}
                 helperText={helperText}
+                helperErrorText={helperErrorText}
                 required={required}
                 error={error}
                 addHelperMarginIfIsHidden={addHelperMarginIfIsHidden}
@@ -45,7 +61,8 @@ export default function TextField<T extends DefaultTextFieldValueType>(props: Te
             >
                 <Input
                     {...rest}
-                    onBlur={textFieldOnBlur}
+                    id={id}
+                    onBlur={onBlur || textFieldOnBlur}
                     onChange={onChange || textFieldOnChange}
                     defaultValue={defaultValue}
                     type={type}

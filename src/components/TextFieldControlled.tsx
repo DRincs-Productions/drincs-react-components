@@ -11,17 +11,50 @@ export default function TextFieldControlled<
 >(props: TextFieldControlledProps<T, TFieldValues, TName>) {
     const {
         controllerProps,
+        onChange,
+        onBlur,
+        required,
         ...rest
     } = props;
+    const {
+        rules,
+        ...controllerRest
+    } = controllerProps;
 
     try {
         return (
             <Controller
-                {...controllerProps}
-                render={({ field }) => <TextField
-                    {...field}
-                    {...rest}
-                />}
+                rules={{
+                    required: required,
+                    ...rules
+                }}
+                {...controllerRest}
+                render={({ field: { onChange: controllerOnChange, onBlur: controllerOnBlur, ref, ...field } }) => (
+                    <TextField
+                        id={controllerProps.name}
+                        onChange={e => {
+                            let value = e.target.value as T;
+                            if (e.target.type === "number") {
+                                value = (e.target as any).valueAsNumber as T;
+                            }
+                            if (onChange) {
+                                onChange(e, value, controllerOnChange);
+                            } else {
+                                controllerOnChange(e);
+                            }
+                        }}
+                        onBlur={() => {
+                            if (onBlur) {
+                                onBlur(controllerOnBlur);
+                            } else {
+                                controllerOnBlur();
+                            }
+                        }}
+                        required={required}
+                        {...field}
+                        {...rest}
+                    />
+                )}
             />
         )
     } catch (error) {

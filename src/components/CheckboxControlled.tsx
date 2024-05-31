@@ -1,12 +1,12 @@
 import { Controller, FieldPath, FieldValues } from "react-hook-form";
-import CheckboxWithFormControlledProps from "../interfaces/components/CheckboxWithFormControlledProps";
-import CheckboxWithForm from "./CheckboxWithForm";
+import CheckboxControlledProps from "../interfaces/components/CheckboxControlledProps";
+import Checkbox from "./Checkbox";
 import ErrorComponent from "./ErrorComponent";
 
-export default function CheckboxWithFormControlled<
+export default function CheckboxControlled<
     TFieldValues extends FieldValues = FieldValues,
     TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
->(props: CheckboxWithFormControlledProps<TFieldValues, TName>) {
+>(props: CheckboxControlledProps<TFieldValues, TName>) {
     const {
         controllerProps,
         onChange,
@@ -28,7 +28,7 @@ export default function CheckboxWithFormControlled<
                 }}
                 {...controllerRest}
                 render={({ field: { onChange: controllerOnChange, onBlur: controllerOnBlur, value, ref, ...field } }) => (
-                    <CheckboxWithForm
+                    <Checkbox
                         id={controllerProps.name}
                         onChange={e => {
                             let value = e.target.checked
@@ -53,6 +53,6 @@ export default function CheckboxWithFormControlled<
             />
         )
     } catch (error) {
-        return <ErrorComponent error={error} text={"Checkbox With Form Controlled"} />
+        return <ErrorComponent error={error} text={"Checkbox Controlled"} />
     }
 }

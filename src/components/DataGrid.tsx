@@ -1,17 +1,9 @@
-import { DataGrid as DataGridX, GridColumnVisibilityModel } from '@mui/x-data-grid';
+import { DataGrid as DataGridX } from '@mui/x-data-grid';
 import * as locales from '@mui/x-data-grid/locales';
-import { GridInitialStateCommunity } from '@mui/x-data-grid/models/gridStateCommunity';
-import DataGridProps, { GridValidRowModel } from '../interfaces/components/DataGridProps';
+import { createColumnVisibilityModel } from '../functions/DataGridFunctions';
+import { DataGridProps, GridValidRowModel } from '../interfaces/components';
 import ErrorComponent from './ErrorComponent';
 import Sheet from './Sheet';
-
-function createColumnVisibilityModel(hidenColumns: string[], initialState?: GridInitialStateCommunity): GridColumnVisibilityModel {
-    let columnVisibilityModel = initialState?.columns?.columnVisibilityModel ?? {};
-    hidenColumns.forEach((column) => {
-        columnVisibilityModel[column] = false;
-    })
-    return columnVisibilityModel;
-}
 
 export default function DataGrid<T extends GridValidRowModel>(props: DataGridProps<T>) {
     const getLanguage = (locales: any) => {

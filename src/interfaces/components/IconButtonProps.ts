@@ -6,6 +6,5 @@ export default interface IconButtonProps extends IconButtonPropsJoy<IconButtonTy
 }> {
     ariaLabel?: string
     loading?: boolean
-    fieldName?: string
     elevation?: keyof Shadow
 }

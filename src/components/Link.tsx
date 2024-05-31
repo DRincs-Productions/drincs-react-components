@@ -1,6 +1,6 @@
 import { Typography, useTheme } from '@mui/joy';
 import LinkJoy from '@mui/joy/Link';
-import LinkProps from '../interfaces/components/LinkProps';
+import { LinkProps } from '../interfaces/components';
 
 export default function Link({
     children,
