@@ -1,47 +1,62 @@
 import Modal from '@mui/joy/Modal';
 import { default as ModalDialogJoy } from '@mui/joy/ModalDialog';
-import { Transition } from 'react-transition-group';
+import { motion } from "framer-motion";
+import { useEffect, useState } from 'react';
 import ModalDialogProps from '../interfaces/components/ModalDialogProps';
 
 export default function ModalDialog({ sx, open, setOpen, transitionTimeout = 400, ...rest }: ModalDialogProps) {
+    const [internalOpen, setInternalOpen] = useState(open)
+    useEffect(() => {
+        if (open) {
+            setInternalOpen(open)
+            return
+        }
+        const timeout = setTimeout(() => {
+            setInternalOpen(open)
+        }, transitionTimeout)
+        return () => {
+            clearTimeout(timeout)
+        }
+    }, [open])
+
     return (
-        <Transition in={open} timeout={transitionTimeout}>
-            {(state: string) => (
-                <Modal
-                    keepMounted
-                    open={!['exited', 'exiting'].includes(state)}
-                    onClose={() => setOpen(false)}
-                    slotProps={{
-                        backdrop: {
-                            sx: {
-                                opacity: 0,
-                                backdropFilter: 'none',
-                                transition: `opacity ${transitionTimeout}ms, backdrop-filter ${transitionTimeout}ms`,
-                                ...{
-                                    entering: { opacity: 1, backdropFilter: 'blur(8px)' },
-                                    entered: { opacity: 1, backdropFilter: 'blur(8px)' },
-                                }[state],
-                            },
-                        },
-                    }}
-                    sx={{
-                        visibility: state === 'exited' ? 'hidden' : 'visible',
-                    }}
-                >
-                    <ModalDialogJoy
-                        sx={{
-                            opacity: 0,
-                            transition: `opacity ${transitionTimeout * 0.75}ms`,
-                            ...{
-                                entering: { opacity: 1 },
-                                entered: { opacity: 1 },
-                            }[state],
-                            ...sx,
-                        }}
-                        {...rest}
-                    />
-                </Modal>
-            )}
-        </Transition>
+        <Modal
+            keepMounted
+            open={internalOpen}
+            onClose={() => setOpen(false)}
+            component={motion.div}
+            initial={{
+                opacity: 0
+            }}
+            animate={{
+                opacity: open ? 1 : 0,
+            }}
+            exit={{
+                opacity: 0
+            }}
+            transition={{
+                duration: transitionTimeout / 1000,
+            }}
+        >
+            <ModalDialogJoy
+                sx={{
+                    ...sx,
+                }}
+                component={motion.div}
+                initial={{
+                    opacity: 0,
+                }}
+                animate={{
+                    opacity: open ? 1 : 0,
+                }}
+                exit={{
+                    opacity: 0,
+                }}
+                transition={{
+                    duration: transitionTimeout / 1000 * 0.75,
+                }}
+                {...rest}
+            />
+        </Modal>
     );
 }
