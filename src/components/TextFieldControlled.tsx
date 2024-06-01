@@ -1,13 +1,17 @@
+import { InputTypeMap } from '@mui/joy';
+import { ElementType } from 'react';
 import { Controller, FieldPath, FieldValues } from 'react-hook-form';
-import TextFieldControlledProps from '../interfaces/components/TextFieldControlledProps';
 import { DefaultTextFieldValueType } from '../types/DefaultTextFieldValueType';
+import TextFieldControlledProps from '../types/TextFieldControlledProps';
 import ErrorComponent from './ErrorComponent';
 import TextField from './TextField';
 
 export default function TextFieldControlled<
     T extends DefaultTextFieldValueType,
     TFieldValues extends FieldValues = FieldValues,
-    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+    D extends ElementType = InputTypeMap['defaultComponent'],
+    P = { component?: ElementType }
 >(props: TextFieldControlledProps<T, TFieldValues, TName>) {
     const {
         controllerProps,

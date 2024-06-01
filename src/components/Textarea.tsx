@@ -1,10 +1,13 @@
-import { Textarea as TextareaJoy } from '@mui/joy';
-import { FocusEventHandler } from 'react';
-import TextareaProps from '../interfaces/components/TextareaProps';
+import { InputTypeMap, Textarea as TextareaJoy } from '@mui/joy';
+import { ElementType, FocusEventHandler } from 'react';
+import { TextareaProps } from '../types';
 import ErrorComponent from './ErrorComponent';
 import TextFormControlBase from './TextFormControlBase';
 
-export default function Textarea(props: TextareaProps<string>) {
+export default function Textarea<
+    D extends ElementType = InputTypeMap['defaultComponent'],
+    P = { component?: ElementType }
+>(props: TextareaProps<string, D, P>) {
     const {
         label,
         helperText,

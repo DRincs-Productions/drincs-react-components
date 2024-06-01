@@ -1,14 +1,18 @@
-import { Input } from '@mui/joy';
-import { FocusEventHandler, useContext } from 'react';
+import { Input, InputTypeMap } from '@mui/joy';
+import { ElementType, FocusEventHandler, useContext } from 'react';
 import { ErrorContext, LoadingContext, VisibilityContext } from '../contexts';
 import DisabledContext from '../contexts/DisabledContext';
-import TextFieldProps from '../interfaces/components/TextFieldProps';
 import { DefaultTextFieldValueType } from '../types/DefaultTextFieldValueType';
+import TextFieldProps from '../types/TextFieldProps';
 import ErrorComponent from './ErrorComponent';
 import TextFormControlBase from './TextFormControlBase';
 import { TextFieldSkeleton } from './skeleton/TextFieldSkeleton';
 
-export default function TextField<T extends DefaultTextFieldValueType>(props: TextFieldProps<T>) {
+export default function TextField<
+    T extends DefaultTextFieldValueType,
+    D extends ElementType = InputTypeMap['defaultComponent'],
+    P = { component?: ElementType }
+>(props: TextFieldProps<T, D, P>) {
     const errorContext = useContext(ErrorContext)
     const loadingContext = useContext(LoadingContext)
     const visibilityContext = useContext(VisibilityContext)
