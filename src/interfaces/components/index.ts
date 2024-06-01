@@ -29,9 +29,6 @@ export { default as SheetProps } from './SheetProps';
 export { default as StackOverflowProps } from './StackOverflowProps';
 export { default as TableProps } from './TableProps';
 export { TabsGeneratorItem, default as TabsGeneratorProps } from './TabsGeneratorProps';
-export { default as TextareaProps } from './TextareaProps';
-export { default as TextFieldControlledProps } from './TextFieldControlledProps';
-export { default as TextFieldProps } from './TextFieldProps';
 export { default as TextFormControlBaseProps } from './TextFormControlBaseProps';
 export { default as TypewriterProps } from './TypewriterProps';
 
