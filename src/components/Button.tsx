@@ -1,12 +1,14 @@
-import { Button as ButtonJoy, Tooltip } from '@mui/joy';
-import { ButtonProps } from '../interfaces/components';
+import { Button as ButtonJoy, ButtonTypeMap, Tooltip } from '@mui/joy';
 import { useTheme } from '../Theme';
+import { ButtonProps } from '../types/components';
 import ErrorComponent from './ErrorComponent';
 
-export default function Button(props: ButtonProps) {
+export default function Button<
+    D extends React.ElementType = ButtonTypeMap['defaultComponent'],
+    P = { component?: React.ElementType }
+>(props: ButtonProps<D, P>) {
     const theme = useTheme()
     const {
-        children,
         ariaLabel,
         fullWidth = true,
         variant = "solid",
@@ -52,9 +54,7 @@ export default function Button(props: ButtonProps) {
                             }
                         }
                     }}
-                >
-                    {children}
-                </ButtonJoy>
+                />
             </Tooltip>
         );
     } catch (error) {

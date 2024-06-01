@@ -2,7 +2,7 @@ import { InputTypeMap } from '@mui/joy';
 import { ElementType } from 'react';
 import { Controller, FieldPath, FieldValues } from 'react-hook-form';
 import { DefaultTextFieldValueType } from '../types/DefaultTextFieldValueType';
-import TextFieldControlledProps from '../types/TextFieldControlledProps';
+import TextFieldControlledProps from '../types/components/TextFieldControlledProps';
 import ErrorComponent from './ErrorComponent';
 import TextField from './TextField';
 

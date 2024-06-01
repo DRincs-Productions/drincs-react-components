@@ -1,8 +1,8 @@
 import { InputProps, InputTypeMap } from "@mui/joy";
 import { ElementType } from "react";
-import TextFormControlBaseProps from "../interfaces/components/TextFormControlBaseProps";
-import { DefaultTextFieldValueType } from "./DefaultTextFieldValueType";
-import { OnChangeGenericType } from "./OnChangeGenericType";
+import TextFormControlBaseProps from "../../interfaces/components/TextFormControlBaseProps";
+import { DefaultTextFieldValueType } from "../DefaultTextFieldValueType";
+import { OnChangeGenericType } from "../OnChangeGenericType";
 
 type TextFieldProps<
     T extends DefaultTextFieldValueType,

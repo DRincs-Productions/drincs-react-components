@@ -3,8 +3,6 @@ export { default as AlertProps } from './AlertProps';
 export { default as AutocompleteControlledProps } from './AutocompleteControlledProps';
 export { default as AutocompleteProps } from './AutocompleteProps';
 export { default as AutocompleteServerSideProps } from './AutocompleteServerSideProps';
-export { default as ButtonFabProps } from './ButtonFabProps';
-export { default as ButtonProps } from './ButtonProps';
 export { default as CheckboxControlledProps } from './CheckboxControlledProps';
 export { default as CheckboxFormControlBaseProps } from './CheckboxFormControlBaseProps';
 export { default as CheckboxProps } from './CheckboxProps';

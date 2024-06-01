@@ -1,8 +1,8 @@
 import { InputTypeMap } from "@mui/joy";
 import { ChangeEvent, ElementType } from "react";
 import { FieldPath, FieldValues } from "react-hook-form";
-import ComponentControlledProps, { OnBlurControlledType, OnChangeControlledType } from "../interfaces/components/ComponentControlledProps";
-import { DefaultTextFieldValueType } from "./DefaultTextFieldValueType";
+import ComponentControlledProps, { OnBlurControlledType, OnChangeControlledType } from "../../interfaces/components/ComponentControlledProps";
+import { DefaultTextFieldValueType } from "../DefaultTextFieldValueType";
 import TextFieldProps from "./TextFieldProps";
 
 type TextFieldControlledProps<

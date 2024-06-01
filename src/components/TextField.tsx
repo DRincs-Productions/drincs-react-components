@@ -3,7 +3,7 @@ import { ElementType, FocusEventHandler, useContext } from 'react';
 import { ErrorContext, LoadingContext, VisibilityContext } from '../contexts';
 import DisabledContext from '../contexts/DisabledContext';
 import { DefaultTextFieldValueType } from '../types/DefaultTextFieldValueType';
-import TextFieldProps from '../types/TextFieldProps';
+import TextFieldProps from '../types/components/TextFieldProps';
 import ErrorComponent from './ErrorComponent';
 import TextFormControlBase from './TextFormControlBase';
 import { TextFieldSkeleton } from './skeleton/TextFieldSkeleton';
