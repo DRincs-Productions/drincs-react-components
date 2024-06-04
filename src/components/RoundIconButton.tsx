@@ -1,5 +1,5 @@
 import { IconButton } from ".";
-import RoundIconButtonProps from "../interfaces/components/RoundIconButtonProps";
+import { RoundIconButtonProps } from "../types";
 
 export default function RoundIconButton(props: RoundIconButtonProps) {
     const {

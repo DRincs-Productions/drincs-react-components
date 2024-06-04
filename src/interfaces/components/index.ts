@@ -21,7 +21,6 @@ export { default as LinkRouterProps } from './LinkRouterProps';
 export { default as ModalConfirmationProps } from './ModalConfirmationProps';
 export { default as ModalDialogExtendedProps } from './ModalDialogExtendedProps';
 export { default as ModalDialogProps } from './ModalDialogProps';
-export { default as RoundIconButtonProps } from './RoundIconButtonProps';
 export { default as SheetProps } from './SheetProps';
 export { default as StackOverflowProps } from './StackOverflowProps';
 export { default as TableProps } from './TableProps';
