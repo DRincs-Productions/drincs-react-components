@@ -1,6 +1,6 @@
 import { Button as ButtonJoy, ButtonTypeMap, Tooltip } from '@mui/joy';
 import { useTheme } from '../Theme';
-import { ButtonProps } from '../types/components';
+import { ButtonProps } from '../types';
 import ErrorComponent from './ErrorComponent';
 
 export default function Button<
