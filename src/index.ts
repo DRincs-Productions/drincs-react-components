@@ -9,5 +9,4 @@ export * from './interfaces';
 export * from './interfaces/components';
 export { default as CssVarsProvider, createPaletteRange, extendTheme, extendThemeMaterial, get10ColorShades, useTheme, useThemeMaterial } from './Theme';
 export * from './types';
-export * from './types/components';
 
