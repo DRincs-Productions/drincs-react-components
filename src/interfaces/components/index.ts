@@ -13,7 +13,6 @@ export { default as CopyrightProps } from './CopyrightProps';
 export { default as DataGridProps, GridValidRowModel } from './DataGridProps';
 export { default as DragHandleDividerProps } from './DragHandleDividerProps';
 export { default as GridHideableProps } from './GridHideableProps';
-export { default as IconButtonProps } from './IconButtonProps';
 export { default as ImageBackdropProps } from './ImageBackdropProps';
 export { default as ImageSrcProps } from './ImageSrcProps';
 export { default as KeyframePulseProps } from './KeyframePulseProps';

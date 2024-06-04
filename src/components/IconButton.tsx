@@ -1,8 +1,8 @@
 import { CircularProgress, IconButton as IconButtonJoy, Tooltip } from '@mui/joy';
 import { useContext } from 'react';
 import LoadingContext from '../contexts/LoadingContext';
-import { IconButtonProps } from '../interfaces/components';
 import { useTheme } from '../Theme';
+import { IconButtonProps } from '../types';
 import ErrorComponent from './ErrorComponent';
 
 export default function IconButton(props: IconButtonProps) {
