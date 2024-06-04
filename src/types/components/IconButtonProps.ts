@@ -7,5 +7,5 @@ type IconButtonProps<
     ariaLabel?: string
     loading?: boolean
     elevation?: keyof Shadow
-} & IconButtonPropsJoy<D, P>
+} & IconButtonPropsJoy<D, P> & IconButtonPropsJoy
 export default IconButtonProps

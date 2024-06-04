@@ -1,11 +1,14 @@
-import { CircularProgress, IconButton as IconButtonJoy, Tooltip } from '@mui/joy';
+import { CircularProgress, IconButton as IconButtonJoy, IconButtonTypeMap, Tooltip } from '@mui/joy';
 import { useContext } from 'react';
 import LoadingContext from '../contexts/LoadingContext';
 import { useTheme } from '../Theme';
 import { IconButtonProps } from '../types';
 import ErrorComponent from './ErrorComponent';
 
-export default function IconButton(props: IconButtonProps) {
+export default function IconButton<
+    D extends React.ElementType = IconButtonTypeMap['defaultComponent'],
+    P = { component?: React.ElementType }
+>(props: IconButtonProps<D, P>) {
     const theme = useTheme()
     const loadingContext = useContext(LoadingContext)
     const {
