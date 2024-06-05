@@ -8,7 +8,11 @@ import ElementTypeMap from '../interfaces/ElementTypeMap';
 import { useTheme } from '../Theme';
 import ErrorComponent from './ErrorComponent';
 
-function IconButton(props: IconButtonProps) {
+type IconButtonType<M extends OverridableTypeMap = ElementTypeMap<IconButtonProps, "button">> =
+    ((props: OverrideProps<ExtendIconButtonTypeMap<M>, 'a'>) => JSX.Element)
+    & OverridableComponent<ExtendIconButtonTypeMap<M>>;
+
+const IconButton: IconButtonType = (props: IconButtonProps) => {
     const theme = useTheme()
     const loadingContext = useContext(LoadingContext)
     const {
@@ -84,5 +88,4 @@ function IconButton(props: IconButtonProps) {
     }
 }
 
-type IconButtonType<M extends OverridableTypeMap = ElementTypeMap<IconButtonProps, "button">> = ((props: OverrideProps<ExtendIconButtonTypeMap<M>, 'a'>) => JSX.Element) & OverridableComponent<ExtendIconButtonTypeMap<M>>;
-export default IconButton as IconButtonType;
+export default IconButton;

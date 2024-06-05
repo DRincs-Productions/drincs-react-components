@@ -4,7 +4,11 @@ import { RoundIconButtonProps } from "../interfaces";
 import ElementTypeMap from "../interfaces/ElementTypeMap";
 import IconButton from "./IconButton";
 
-function RoundIconButton(props: RoundIconButtonProps) {
+type RoundIconButtonType<M extends OverridableTypeMap = ElementTypeMap<RoundIconButtonProps, "button">> =
+    ((props: OverrideProps<ExtendIconButtonTypeMap<M>, 'a'>) => JSX.Element)
+    & OverridableComponent<ExtendIconButtonTypeMap<M>>;
+
+const RoundIconButton: RoundIconButtonType = (props: RoundIconButtonProps) => {
     const {
         sx,
         circumference,
@@ -30,5 +34,4 @@ function RoundIconButton(props: RoundIconButtonProps) {
     );
 }
 
-type RoundIconButtonType<M extends OverridableTypeMap = ElementTypeMap<RoundIconButtonProps, "button">> = ((props: OverrideProps<ExtendIconButtonTypeMap<M>, 'a'>) => JSX.Element) & OverridableComponent<ExtendIconButtonTypeMap<M>>;
-export default RoundIconButton as RoundIconButtonType;
+export default RoundIconButton;
