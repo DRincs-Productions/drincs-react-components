@@ -3,8 +3,8 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import LoadingContext from '../contexts/LoadingContext';
+import { IconButtonProps } from '../interfaces';
 import { useTheme } from '../Theme';
-import { IconButtonProps } from '../types';
 import ErrorComponent from './ErrorComponent';
 
 function IconButton(props: IconButtonProps) {

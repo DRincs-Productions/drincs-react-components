@@ -1,6 +1,6 @@
 import { ExtendIconButtonTypeMap, IconButtonTypeMap } from "@mui/joy";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
-import { RoundIconButtonProps } from "../types";
+import { RoundIconButtonProps } from "../interfaces";
 import IconButton from "./IconButton";
 
 function RoundIconButton(props: RoundIconButtonProps) {
