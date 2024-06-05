@@ -1,9 +1,10 @@
-import { CircularProgress, ExtendIconButtonTypeMap, IconButton as IconButtonJoy, IconButtonTypeMap, Tooltip } from '@mui/joy';
-import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { CircularProgress, ExtendIconButtonTypeMap, IconButton as IconButtonJoy, Tooltip } from '@mui/joy';
+import { OverridableComponent, OverridableTypeMap, OverrideProps } from '@mui/material/OverridableComponent';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import LoadingContext from '../contexts/LoadingContext';
 import { IconButtonProps } from '../interfaces';
+import ElementTypeMap from '../interfaces/ElementTypeMap';
 import { useTheme } from '../Theme';
 import ErrorComponent from './ErrorComponent';
 
@@ -83,4 +84,5 @@ function IconButton(props: IconButtonProps) {
     }
 }
 
-export default IconButton as typeof IconButton & OverridableComponent<ExtendIconButtonTypeMap<IconButtonTypeMap<{}, "button">>>;
+type IconButtonType<M extends OverridableTypeMap = ElementTypeMap<IconButtonProps, "button">> = ((props: OverrideProps<ExtendIconButtonTypeMap<M>, 'a'>) => JSX.Element) & OverridableComponent<ExtendIconButtonTypeMap<M>>;
+export default IconButton as IconButtonType;

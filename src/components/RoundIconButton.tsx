@@ -1,6 +1,7 @@
-import { ExtendIconButtonTypeMap, IconButtonTypeMap } from "@mui/joy";
-import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { ExtendIconButtonTypeMap } from "@mui/joy";
+import { OverridableComponent, OverridableTypeMap, OverrideProps } from "@mui/material/OverridableComponent";
 import { RoundIconButtonProps } from "../interfaces";
+import ElementTypeMap from "../interfaces/ElementTypeMap";
 import IconButton from "./IconButton";
 
 function RoundIconButton(props: RoundIconButtonProps) {
@@ -29,4 +30,5 @@ function RoundIconButton(props: RoundIconButtonProps) {
     );
 }
 
-export default RoundIconButton as typeof RoundIconButton & OverridableComponent<ExtendIconButtonTypeMap<IconButtonTypeMap<{}, "button">>>;
+type RoundIconButtonType<M extends OverridableTypeMap = ElementTypeMap<RoundIconButtonProps, "button">> = ((props: OverrideProps<ExtendIconButtonTypeMap<M>, 'a'>) => JSX.Element) & OverridableComponent<ExtendIconButtonTypeMap<M>>;
+export default RoundIconButton as RoundIconButtonType;
