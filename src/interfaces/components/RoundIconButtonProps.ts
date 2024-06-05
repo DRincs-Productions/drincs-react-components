@@ -1,6 +1,5 @@
 import IconButtonProps from "./IconButtonProps";
 
-type RoundIconButtonProps = {
+export default interface RoundIconButtonProps extends IconButtonProps {
     circumference?: string | {} | number
-} & IconButtonProps
-export default RoundIconButtonProps
+} 

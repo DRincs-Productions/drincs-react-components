@@ -1,7 +1,5 @@
 export { default as ButtonFabProps } from './components/ButtonFabProps';
 export { default as ButtonProps } from './components/ButtonProps';
-export { default as IconButtonProps } from './components/IconButtonProps';
-export { default as RoundIconButtonProps } from './components/RoundIconButtonProps';
 export { default as TextareaProps } from './components/TextareaProps';
 export { default as TextFieldControlledProps } from './components/TextFieldControlledProps';
 export { default as TextFieldProps } from './components/TextFieldProps';
