@@ -71,6 +71,7 @@ function IconButton(props: IconButtonProps) {
                                 }
                             }
                         }}
+                        {...rest}
                     >
                         {children}
                     </IconButtonJoy>
