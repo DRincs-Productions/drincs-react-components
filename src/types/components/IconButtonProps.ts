@@ -1,12 +1,8 @@
-import { IconButtonProps as IconButtonPropsJoy, IconButtonTypeMap, Shadow } from '@mui/joy';
-import { HTMLAttributes } from 'react';
+import { IconButtonProps as IconButtonPropsJoy, Shadow } from '@mui/joy';
 
-type IconButtonProps<
-    D extends React.ElementType = IconButtonTypeMap['defaultComponent'],
-    P = { component?: React.ElementType }
-> = {
+type IconButtonProps = {
     ariaLabel?: string
     loading?: boolean
     elevation?: keyof Shadow
-} & IconButtonPropsJoy<D, P> & HTMLAttributes<HTMLDivElement>
+} & IconButtonPropsJoy
 export default IconButtonProps

@@ -1,14 +1,13 @@
-import { CircularProgress, IconButton as IconButtonJoy, IconButtonTypeMap, Tooltip } from '@mui/joy';
+import { CircularProgress, ExtendIconButtonTypeMap, IconButton as IconButtonJoy, IconButtonTypeMap, Tooltip } from '@mui/joy';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import LoadingContext from '../contexts/LoadingContext';
 import { useTheme } from '../Theme';
 import { IconButtonProps } from '../types';
 import ErrorComponent from './ErrorComponent';
 
-export default function IconButton<
-    D extends React.ElementType = IconButtonTypeMap['defaultComponent'],
-    P = { component?: React.ElementType }
->(props: IconButtonProps<D, P>) {
+function IconButton(props: IconButtonProps) {
     const theme = useTheme()
     const loadingContext = useContext(LoadingContext)
     const {
@@ -43,7 +42,10 @@ export default function IconButton<
             >
                 <div> {/* This div is necessary to avoid the tooltip to be cutted */}
                     <IconButtonJoy
-                        {...rest}
+                        component={motion.div}
+                        animate={{
+
+                        }}
                         title={ariaLabel}
                         variant={variant}
                         color={color}
@@ -79,3 +81,5 @@ export default function IconButton<
         return <ErrorComponent error={error} text={"Button"} />
     }
 }
+
+export default IconButton as typeof IconButton & OverridableComponent<ExtendIconButtonTypeMap<IconButtonTypeMap<{}, "button">>>;

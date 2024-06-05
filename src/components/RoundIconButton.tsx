@@ -1,11 +1,9 @@
-import { IconButtonTypeMap } from "@mui/joy";
+import { ExtendIconButtonTypeMap, IconButtonTypeMap } from "@mui/joy";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { RoundIconButtonProps } from "../types";
 import IconButton from "./IconButton";
 
-export default function RoundIconButton<
-    D extends React.ElementType = IconButtonTypeMap['defaultComponent'],
-    P = { component?: React.ElementType }
->(props: RoundIconButtonProps<D, P>) {
+function RoundIconButton(props: RoundIconButtonProps) {
     const {
         sx,
         circumference,
@@ -30,3 +28,5 @@ export default function RoundIconButton<
         />
     );
 }
+
+export default RoundIconButton as typeof RoundIconButton & OverridableComponent<ExtendIconButtonTypeMap<IconButtonTypeMap<{}, "button">>>;
