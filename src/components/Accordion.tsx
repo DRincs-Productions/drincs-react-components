@@ -10,7 +10,7 @@ import { useContext, useState } from 'react';
 import { VisibilityContext } from '../contexts';
 import { AccordionProps } from '../interfaces/components';
 
-export default function CAccordion(props: AccordionProps) {
+export default function Accordion(props: AccordionProps) {
     const visibilityContext = useContext(VisibilityContext)
     const {
         id,
