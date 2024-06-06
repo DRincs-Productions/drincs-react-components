@@ -5,11 +5,11 @@ import ElementTypeMap from '../interfaces/ElementTypeMap';
 import { useTheme } from '../Theme';
 import ErrorComponent from './ErrorComponent';
 
-type IconButtonType<M extends OverridableTypeMap = ElementTypeMap<ButtonProps, "button">> =
+type ButtonType<M extends OverridableTypeMap = ElementTypeMap<ButtonProps, "button">> =
     ((props: OverrideProps<ExtendButtonTypeMap<M>, 'a'>) => JSX.Element)
     & OverridableComponent<ExtendButtonTypeMap<M>>;
 
-const Button: IconButtonType = (props: ButtonProps) => {
+const Button: ButtonType = (props: ButtonProps) => {
     const theme = useTheme()
     const {
         ariaLabel,
