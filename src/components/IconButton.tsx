@@ -1,6 +1,5 @@
 import { CircularProgress, ExtendIconButtonTypeMap, IconButton as IconButtonJoy, Tooltip } from '@mui/joy';
 import { OverridableComponent, OverridableTypeMap, OverrideProps } from '@mui/material/OverridableComponent';
-import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import LoadingContext from '../contexts/LoadingContext';
 import { IconButtonProps } from '../interfaces';
@@ -47,10 +46,6 @@ const IconButton: IconButtonType = (props: IconButtonProps) => {
             >
                 <div> {/* This div is necessary to avoid the tooltip to be cutted */}
                     <IconButtonJoy
-                        component={motion.div}
-                        animate={{
-
-                        }}
                         title={ariaLabel}
                         variant={variant}
                         color={color}
