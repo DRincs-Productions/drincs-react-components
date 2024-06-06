@@ -1,12 +1,9 @@
-import { Button as ButtonJoy, ButtonTypeMap, Tooltip } from '@mui/joy';
+import { Button as ButtonJoy, Tooltip } from '@mui/joy';
 import { ButtonProps } from '../interfaces';
 import { useTheme } from '../Theme';
 import ErrorComponent from './ErrorComponent';
 
-export default function Button<
-    D extends React.ElementType = ButtonTypeMap['defaultComponent'],
-    P = { component?: React.ElementType }
->(props: ButtonProps) {
+export default function Button(props: ButtonProps) {
     const theme = useTheme()
     const {
         ariaLabel,

@@ -1,14 +1,10 @@
-import { ButtonTypeMap } from '@mui/joy';
 import { Fab, Theme, Zoom, useMediaQuery } from '@mui/material';
 import { useState } from 'react';
 import { ButtonFabProps } from '../interfaces';
 import Button from './Button';
 import ErrorComponent from './ErrorComponent';
 
-export default function ButtonFab<
-    D extends React.ElementType = ButtonTypeMap['defaultComponent'],
-    P = { component?: React.ElementType }
->(props: ButtonFabProps) {
+export default function ButtonFab(props: ButtonFabProps) {
     const {
         fabProps,
         breakpoints = 'sm',
