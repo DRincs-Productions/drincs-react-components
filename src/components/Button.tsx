@@ -1,9 +1,15 @@
-import { Button as ButtonJoy, Tooltip } from '@mui/joy';
+import { Button as ButtonJoy, ExtendButtonTypeMap, Tooltip } from '@mui/joy';
+import { OverridableComponent, OverridableTypeMap, OverrideProps } from '@mui/material/OverridableComponent';
 import { ButtonProps } from '../interfaces';
+import ElementTypeMap from '../interfaces/ElementTypeMap';
 import { useTheme } from '../Theme';
 import ErrorComponent from './ErrorComponent';
 
-export default function Button(props: ButtonProps) {
+type IconButtonType<M extends OverridableTypeMap = ElementTypeMap<ButtonProps, "button">> =
+    ((props: OverrideProps<ExtendButtonTypeMap<M>, 'a'>) => JSX.Element)
+    & OverridableComponent<ExtendButtonTypeMap<M>>;
+
+const Button: IconButtonType = (props: ButtonProps) => {
     const theme = useTheme()
     const {
         ariaLabel,
@@ -58,3 +64,5 @@ export default function Button(props: ButtonProps) {
         return <ErrorComponent error={error} text={"Button"} />
     }
 }
+
+export default Button;

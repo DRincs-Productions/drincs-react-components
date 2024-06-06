@@ -1,7 +1,7 @@
 import { Typography } from '@mui/joy';
 import { useState } from 'react';
 import { ModalConfirmationProps } from '../interfaces/components';
-import CButton from './Button';
+import Button from './Button';
 import ModalDialogExtended from './ModalDialogExtended';
 
 export default function ModalConfirmation(props: ModalConfirmationProps) {
@@ -31,7 +31,7 @@ export default function ModalConfirmation(props: ModalConfirmationProps) {
                 {headText}
             </Typography>}
             actions={[
-                <CButton
+                <Button
                     key='confirm-button'
                     variant={variantButton}
                     color={color}
@@ -56,8 +56,8 @@ export default function ModalConfirmation(props: ModalConfirmationProps) {
                     startDecorator={startDecorator}
                 >
                     {confirmText || 'Confirm'}
-                </CButton>,
-                <CButton
+                </Button>,
+                <Button
                     key='cancel-button'
                     variant="plain"
                     color="neutral"
@@ -66,7 +66,7 @@ export default function ModalConfirmation(props: ModalConfirmationProps) {
                     disabled={loading}
                 >
                     {cancelText || 'Cancel'}
-                </CButton>
+                </Button>
             ]}
             {...rest}
         >
