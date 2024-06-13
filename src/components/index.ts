@@ -11,7 +11,7 @@ export { default as CheckboxFormControlBase } from './CheckboxFormControlBase';
 export { default as CheckboxWithForm } from './CheckboxWithForm';
 export { default as CheckboxWithFormControlled } from './CheckboxWithFormControlled';
 export { default as Chip } from './Chip';
-export { default as ChipCheckBox } from './ChipCheckBox';
+export { default as ChipCheckbox } from './ChipCheckbox';
 export { default as CircularIndeterminate } from './CircularIndeterminate';
 export { default as Copyright } from './Copyright';
 export { default as DataGrid } from './DataGrid';
