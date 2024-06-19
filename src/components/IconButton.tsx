@@ -30,6 +30,7 @@ const IconButton: IconButtonType = (props: IconButtonProps) => {
         if (loading) {
             return (
                 <Tooltip
+                    key={props.key ? "tooltip-" + props.key : undefined}
                     title={ariaLabel}
                 >
                     <div> {/* This div is necessary to avoid the tooltip to be cutted */}
@@ -42,6 +43,7 @@ const IconButton: IconButtonType = (props: IconButtonProps) => {
         }
         return (
             <Tooltip
+                key={props.key ? "tooltip-" + props.key : undefined}
                 title={ariaLabel}
             >
                 <div> {/* This div is necessary to avoid the tooltip to be cutted */}
