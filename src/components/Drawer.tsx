@@ -3,6 +3,7 @@ import Divider from '@mui/joy/Divider';
 import { listItemButtonClasses } from '@mui/joy/ListItemButton';
 import { DrawerProps } from '../interfaces';
 import Sheet from './Sheet';
+import { useThemeMaterial } from '../Theme';
 
 export default function Drawer(props: DrawerProps) {
     const {
@@ -10,7 +11,7 @@ export default function Drawer(props: DrawerProps) {
         header,
         footer,
         body,
-        zIndex,
+        zIndex = useThemeMaterial().zIndex.drawer,
         width,
         children,
         sx,

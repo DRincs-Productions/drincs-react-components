@@ -6,7 +6,10 @@ export default interface DrawerProps extends SheetProps {
     footer?: JSX.Element,
     drawerWidth?: number
     navMargin?: number
-    zIndex: number;
+    /**
+     * @default useThemeMaterial().zIndex.drawer
+     */
+    zIndex?: number;
     width: string | number | {}
     children?: JSX.Element,
 };
