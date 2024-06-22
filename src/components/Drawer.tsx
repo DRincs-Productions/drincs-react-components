@@ -2,8 +2,8 @@ import Box from '@mui/joy/Box';
 import Divider from '@mui/joy/Divider';
 import { listItemButtonClasses } from '@mui/joy/ListItemButton';
 import { DrawerProps } from '../interfaces';
-import Sheet from './Sheet';
 import { useThemeMaterial } from '../Theme';
+import Sheet from './Sheet';
 
 export default function Drawer(props: DrawerProps) {
     const {
@@ -19,10 +19,12 @@ export default function Drawer(props: DrawerProps) {
     } = props;
 
     return (
-        <Box sx={{
-            display: 'flex',
-            minHeight: '100dvh',
-        }}>
+        <Box
+            sx={{
+                display: 'flex',
+                minHeight: '100dvh',
+            }}
+        >
             <Sheet
                 className="Sidebar"
                 sx={{
