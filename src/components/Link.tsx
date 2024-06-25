@@ -1,4 +1,4 @@
-import { Typography, useTheme } from '@mui/joy';
+import { Typography } from '@mui/joy';
 import LinkJoy from '@mui/joy/Link';
 import { LinkProps } from '../interfaces/components';
 
@@ -6,6 +6,9 @@ export default function Link({
     children,
     disabled,
     selected,
+    textColor = "text.primary",
+    selectedTextColor = "primary.500",
+    disabledTextColor = "neutral.300",
     ...rest
 }: LinkProps) {
     return (
@@ -14,9 +17,9 @@ export default function Link({
         >
             <Typography
                 textColor={
-                    selected ? useTheme().palette.primary[500] :
-                        disabled ? useTheme().palette.neutral[500] :
-                            useTheme().palette.neutral[300]
+                    selected ? selectedTextColor :
+                        disabled ? disabledTextColor :
+                            textColor
                 }
             >
                 {children}
