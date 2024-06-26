@@ -23,29 +23,29 @@
   },
   "homepage": "https://github.com/DRincs-Productions/drincs-react-components#readme",
   "devDependencies": {
-    "@types/react": "^18.3.1",
+    "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "jsdom": "^24.0.0",
+    "jsdom": "^24.1.0",
     "react-dom": "^18.3.1",
     "ts-node": "^10.9.2",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.2",
-    "vitest": "^1.4.0"
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.2",
+    "vitest": "^1.6.0"
   },
   "peerDependencies": {
     "dayjs": ">=1.11.11",
-    "react": ">=16.8.6",
-    "react-hook-form": ">=7.0.0",
-    "react-router-dom": ">=6.0.0"
+    "react": ">=18.3.1",
+    "react-hook-form": ">=7.52.0",
+    "react-router-dom": ">=6.24.0"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@mui/icons-material": "^5.15.15",
+    "@mui/icons-material": "^5.15.20",
     "@mui/joy": "^5.0.0-beta.36",
-    "@mui/material": "^5.15.15",
-    "@mui/x-data-grid": "^7.3.2",
-    "@mui/x-date-pickers": "^7.4.0",
-    "framer-motion": "^11.2.10"
+    "@mui/material": "^5.15.20",
+    "@mui/x-data-grid": "^7.7.1",
+    "@mui/x-date-pickers": "^7.7.1",
+    "framer-motion": "^11.2.12"
   }
 }
