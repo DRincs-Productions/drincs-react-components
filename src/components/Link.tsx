@@ -13,6 +13,7 @@ export default function Link({
 }: LinkProps) {
     return (
         <LinkJoy
+            disabled={disabled}
             {...rest}
         >
             <Typography
