@@ -10,7 +10,6 @@ export { default as CheckboxWithFormControlledProps } from './CheckboxWithFormCo
 export { default as CheckboxWithFormProps } from './CheckboxWithFormProps';
 export { default as ChipProps } from './ChipProps';
 export { default as CopyrightProps } from './CopyrightProps';
-export { default as DataGridProps, GridValidRowModel } from './DataGridProps';
 export { default as DragHandleDividerProps } from './DragHandleDividerProps';
 export { default as GridHideableProps } from './GridHideableProps';
 export { default as ImageBackdropProps } from './ImageBackdropProps';
