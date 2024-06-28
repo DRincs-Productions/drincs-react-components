@@ -1,9 +1,5 @@
+import { ErrorComponentProps } from "../interfaces"
 import { useTheme } from "../Theme"
-
-interface ErrorComponentProps {
-    error: any,
-    text: string,
-}
 
 export default function ErrorComponent(props: ErrorComponentProps) {
     const theme = useTheme()

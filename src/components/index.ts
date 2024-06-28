@@ -17,6 +17,7 @@ export { default as Copyright } from './Copyright';
 export { default as DataGrid } from './DataGrid';
 export { default as DragHandleDivider } from './DragHandleDivider';
 export { default as Drawer } from './Drawer';
+export { default as ErrorComponent } from './ErrorComponent';
 export { default as GridHideable } from './GridHideable';
 export { default as IconButton } from './IconButton';
 export { default as ImageBackdrop } from './ImageBackdrop';
