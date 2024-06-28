@@ -6,7 +6,7 @@ export default function Link({
     children,
     disabled,
     selected,
-    textColor = "neutral.500",
+    textColor = "text.primary",
     selectedTextColor = "primary.600",
     disabledTextColor = "neutral.300",
     ...rest
