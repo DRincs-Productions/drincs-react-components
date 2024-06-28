@@ -8,7 +8,7 @@ on:
     tags:
       - 'v*'
 
-run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+run-name: Deploy the {{ github.ref }} tag
 
 jobs:
   build:
